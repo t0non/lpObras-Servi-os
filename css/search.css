@@ -1,0 +1,378 @@
+/* ============================================================
+   OS - Obras & Serviços | Search Section (Dark Theme)
+   ============================================================ */
+
+.search-section {
+  position: relative;
+  background-color: #FFFFFF;
+  color: var(--color-text-primary);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 80px; /* Padding generoso */
+}
+
+/* Fundo com Imagem Mesclada Suavemente (Desativado no modo claro) */
+.search-section__bg-image {
+  display: none;
+}
+
+.search-section__overlay {
+  display: none;
+}
+
+.search-section__container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1200px; /* Aumentei o max-width para dar mais respiro */
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .search-section__container {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 40px;
+    align-items: center;
+  }
+}
+
+/* ============================================================
+   BOTÕES DE AÇÃO
+   ============================================================ */
+.search-panel__actions {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .search-panel__actions {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+}
+
+/* ============================================================
+   HEADER DA BUSCA
+   ============================================================ */
+.search-section__header {
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 800px;
+}
+
+@media (min-width: 1024px) {
+  .search-section__header {
+    text-align: left;
+    max-width: 100%;
+  }
+}
+
+.search-section__eyebrow {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.search-section__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem); /* Tamanho reduzido para caber melhor na tela */
+  font-weight: var(--weight-regular, 400); 
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.click-gif {
+  height: 1.15em; /* Aumentado o tamanho conforme pedido */
+  width: auto;
+  vertical-align: middle;
+  margin-left: 6px;
+  transform: translateY(-2px);
+  display: inline-block;
+}
+
+.search-section__subtitle {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   PAINEL CENTRAL DE BUSCA (Aba Premium)
+   ============================================================ */
+.search-section__panel {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 1024px) {
+  .search-section__panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 32px;
+    border-radius: 32px;
+    gap: 20px;
+  }
+}
+
+.search-panel__row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .search-panel__row {
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+
+
+
+/* ============================================================
+   CAMPOS DE BUSCA (Inputs)
+   ============================================================ */
+.search-field {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: #F9F9F9;
+  border: 1px solid #E5E5E5;
+  border-radius: 9999px; /* Arredondamento tipo pílula */
+  transition: all 0.25s ease;
+}
+
+.search-field:focus-within {
+  border-color: var(--color-accent);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(212, 160, 23, 0.15);
+}
+
+.search-icon {
+  margin-left: 20px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.search-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 16px 16px 16px 12px; /* Reduzido padding para caber no grid 2x2 */
+  color: var(--color-text-primary);
+  font-size: 0.95rem; /* Fonte levemente menor para não cortar */
+  font-family: inherit;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================================
+   DROPDOWN DE SUGESTÕES (Visual)
+   ============================================================ */
+.search-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  z-index: 10;
+  padding: 8px 0;
+}
+
+.search-field--service:focus-within .search-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.search-dropdown__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.search-dropdown__list::-webkit-scrollbar {
+  width: 6px;
+}
+.search-dropdown__list::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 6px;
+}
+
+.search-dropdown__item {
+  padding: 12px 20px;
+  color: var(--color-text-primary);
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-dropdown__item:hover {
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--color-accent);
+  padding-left: 24px;
+}
+
+
+
+.btn-location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  color: var(--color-text-primary);
+  padding: 16px;
+  border-radius: 16px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .btn-location {
+    grid-column: 1 / 2;
+  }
+}
+
+.btn-location:hover {
+  background: #F9F9F9;
+  border-color: #D1D1D1;
+}
+
+.btn-search-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  color: #FFFFFF;
+  padding: 16px;
+  border-radius: 9999px; /* Arredondamento tipo pílula */
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .btn-search-primary {
+    grid-column: 1 / -1; /* Ocupa as duas colunas agora que o outro botão sumiu */
+  }
+}
+
+.btn-search-primary:hover {
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212, 160, 23, 0.3);
+}
+
+/* ============================================================
+   BENEFÍCIOS (Trust Badges)
+   ============================================================ */
+.search-section__benefits {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+@media (min-width: 600px) {
+  .search-section__benefits {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .search-section__benefits {
+    justify-content: flex-start;
+  }
+}
+
+/* ============================================================
+   IMAGEM DIREITA (CURIOSO)
+   ============================================================ */
+.search-section__image-wrapper {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .search-section__image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  
+  .search-section__image {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    object-fit: contain;
+    /* Imagem posicionada na parte de baixo, sem overflow que a faça sumir */
+    margin-top: 0; 
+    
+    /* Fade no fim para mascarar o corte, igual na seção de reforma */
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.benefit-item svg {
+  flex-shrink: 0;
+}

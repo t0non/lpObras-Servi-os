@@ -78,13 +78,11 @@
 
 .hero__eyebrow {
   font-size: 0.875rem;
-  font-weight: var(--weight-medium);
-  /* Tipografia mais fina */
+  font-weight: 400; /* Tipografia mais fina */
   color: var(--color-accent);
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 16px;
-  /* Eyebrow -> headline: 12-18px */
 }
 
 .hero__title {

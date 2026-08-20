@@ -1,0 +1,170 @@
+/* ============================================================
+   OS - Obras & Serviços | Reforma Section (Estilo Anexo)
+   ============================================================ */
+
+.reforma-section {
+  position: relative;
+  background-color: #FFFFFF; /* Fundo branco */
+  padding-block: 0; /* Removido padding para deixar o mais fino possível */
+  margin-top: 60px; /* Espaço para a cabeça da moça vazar para cima */
+  display: flex;
+  align-items: center;
+}
+
+/* ============================================================
+   CONTAINER E GRID
+   ============================================================ */
+.reforma__container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .reforma__container {
+    grid-template-columns: 45% 55%;
+    gap: 40px;
+  }
+}
+
+/* ============================================================
+   LADO ESQUERDO (A Moça "Livre")
+   ============================================================ */
+.reforma__image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.reforma__image {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 400px;
+  object-fit: contain;
+  margin-top: -100px; /* Vaza mais para cima */
+  display: block;
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}  /* Sem bordas, sem fundo. A imagem deve ser vazada (PNG) */
+
+/* Floating Badge */
+.reforma__badge {
+  position: absolute;
+  bottom: 20px;
+  right: 10%;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 160px;
+}
+
+.reforma__badge-text {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  line-height: 1.2;
+}
+
+.reforma__badge-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--color-accent);
+  color: #FFFFFF; /* Texto branco no fundo dourado */
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  width: fit-content;
+}
+
+.reforma__badge-rating svg {
+  width: 12px;
+  height: 12px;
+  fill: #FFFFFF; /* Estrela branca */
+}
+
+/* ============================================================
+   LADO DIREITO (Textos e Botão)
+   ============================================================ */
+.reforma__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.reforma__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem); /* Ligeiramente menor */
+  font-weight: 400; /* Texto mais fino conforme pedido */
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px; /* Margem menor */
+}
+
+.reforma__title-gray {
+  display: block;
+  color: var(--color-text-primary); /* Cinza Escuro */
+}
+
+.reforma__title-gold {
+  display: block;
+  color: var(--color-accent); /* Laranja/Dourado */
+}
+
+.reforma__subtitle {
+  font-size: 1rem; /* Fonte um pouco menor */
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  margin-bottom: 20px; /* Menos espaço até o botão */
+  max-width: 480px;
+}
+
+.reforma__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent);
+  color: #FFFFFF; /* Para manter o visual da referência */
+  padding: 16px 32px;
+  border-radius: 9999px; /* Totalmente redondo */
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.reforma__btn:hover {
+  background-color: var(--color-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(212, 160, 23, 0.3);
+}
+
+@media (max-width: 991px) {
+  .reforma-section {
+    padding-top: 80px; /* Mais espaço pra cabeça no mobile */
+  }
+  
+  .reforma__content {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .reforma__badge {
+    right: 0;
+    bottom: 10px;
+  }
+}

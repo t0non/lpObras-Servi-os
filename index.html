@@ -13,11 +13,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/tokens.css?v=48" />
-  <link rel="stylesheet" href="css/global.css?v=48" />
-  <link rel="stylesheet" href="css/header.css?v=48" />
-  <link rel="stylesheet" href="css/hero.css?v=48" />
-  <link rel="stylesheet" href="css/how-it-works.css?v=48" />
+  <link rel="stylesheet" href="css/tokens.css?v=55" />
+  <link rel="stylesheet" href="css/global.css?v=64" />
+  <link rel="stylesheet" href="css/header.css?v=56" />
+  <link rel="stylesheet" href="css/hero.css?v=56" />
+  <link rel="stylesheet" href="css/search.css?v=15" />
+  <link rel="stylesheet" href="css/how-it-works.css?v=57" />
+  <link rel="stylesheet" href="css/categories.css?v=57" />
+  <link rel="stylesheet" href="css/icp.css?v=10" />
+  <link rel="stylesheet" href="css/stats.css?v=3" />
 </head>
 
 <body>
@@ -67,6 +71,9 @@
     <!-- ==========================================
          HERO — Split Layout (Triider Style)
          ========================================== -->
+    <!-- ==========================================
+         HERO — Split Layout (Triider Style)
+         ========================================== -->
     <section class="hero" id="hero">
       <div class="container hero__container">
 
@@ -84,7 +91,6 @@
             Encontre profissionais avaliados para construção, reforma e manutenção perto de você.
           </p>
 
-          <!-- Ações principais -->
           <div class="hero__actions">
             <a href="#" class="hero__btn hero__btn--primary">Contratar profissional</a>
             <a href="#" class="hero__btn hero__btn--outline">Cadastrar como profissional</a>
@@ -158,105 +164,267 @@
     </section>
 
     <!-- ==========================================
-         CATEGORIAS
+         BUSCA (Nova Aba Premium)
          ========================================== -->
-    <section class="section section--light" id="categorias">
-      <div class="container">
-        <div class="section__header">
-          <h2 class="section__title">Encontre profissionais por categoria</h2>
+    <section class="search-section" id="busca">
+      <div class="search-section__bg-image"></div>
+      <div class="search-section__overlay"></div>
+
+      <div class="container search-section__container">
+        
+        <div class="search-section__content">
+          <div class="search-section__header">
+          <p class="search-section__eyebrow">OBRAS, REFORMAS E MANUTENÇÃO</p>
+          <h2 class="search-section__title">A solução certa para sua obra, em um <span style="color: var(--color-accent);">clique</span>.<img src="assets/images/click.gif?v=3" alt="Cursor clicando" class="click-gif" /></h2>
+          <p class="search-section__subtitle">
+            Busque por categorias, encontre profissionais verificados e fale diretamente com quem pode resolver o seu serviço.
+          </p>
         </div>
 
-        <ul class="categories__grid">
-          <li>
-            <a href="#" class="category-card">
-              <div class="category-card__icon">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M9.7 3.7a7 7 0 1 0 10.6 10.6M3 20l4-4" />
-                  <path d="M12 8v4M8 12h4" />
-                </svg>
-              </div>
-              <span class="category-card__name">Hidráulica</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="category-card">
-              <div class="category-card__icon">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
-                </svg>
-              </div>
-              <span class="category-card__name">Elétrica</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="category-card">
-              <div class="category-card__icon">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="2" y="3" width="20" height="14" rx="2" />
-                  <path d="M8 21h8M12 17v4" />
-                </svg>
-              </div>
-              <span class="category-card__name">Ar-condicionado</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="category-card">
-              <div class="category-card__icon">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path
-                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-                </svg>
-              </div>
-              <span class="category-card__name">Pequenos Reparos</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="category-card">
-              <div class="category-card__icon">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7z" />
-                </svg>
-              </div>
-              <span class="category-card__name">Reformas</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="category-card">
-              <div class="category-card__icon">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <path d="M3 9h18M9 21V9" />
-                </svg>
-              </div>
-              <span class="category-card__name">Pintura</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="category-card">
-              <div class="category-card__icon">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                  <polyline points="9 22 9 12 15 12 15 22" />
-                </svg>
-              </div>
-              <span class="category-card__name">Obras e Construção</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="category-card">
-              <div class="category-card__icon">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path
-                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                </svg>
-              </div>
-              <span class="category-card__name">Montagem de Móveis</span>
-            </a>
-          </li>
-        </ul>
+        <div class="search-section__panel">
+          
+          <div class="search-field search-field--service">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" class="search-input" placeholder="Qual serviço você busca?" autocomplete="off" />
+            
+            <div class="search-dropdown">
+              <ul class="search-dropdown__list">
+                <li class="search-dropdown__item">Pedreiro</li>
+                <li class="search-dropdown__item">Eletricista</li>
+                <li class="search-dropdown__item">Encanador</li>
+                <li class="search-dropdown__item">Pintor</li>
+                <li class="search-dropdown__item">Gesseiro</li>
+                <li class="search-dropdown__item">Montador de Móveis</li>
+                <li class="search-dropdown__item">Marido de Aluguel</li>
+              </ul>
+            </div>
+          </div>
 
-        <div class="section__footer">
-          <a href="#" class="btn-outline-primary">Ver todas as categorias</a>
+          <div class="search-field search-field--location">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <input type="text" class="search-input" placeholder="Sua localização (cidade ou CEP)" autocomplete="off" />
+          </div>
+
+          <button class="btn-search-primary">
+            Buscar profissionais
+          </button>
+        </div>
+
+        </div> <!-- Fim de search-section__content -->
+        <div class="search-section__image-wrapper">
+          <img src="assets/images/curioso.png" alt="Pessoa curiosa procurando serviços" class="search-section__image" />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         REFORMA SECTION (Idêntica ao Anexo)
+         ========================================== -->
+    <section class="reforma-section" id="reforma">
+      <div class="container reforma__container">
+        
+        <!-- Esquerda: Imagem com Badge Flutuante e Fundo Orgânico -->
+        <div class="reforma__image-wrapper">
+          <img src="assets/images/ICP.png" alt="Quer reformar?" class="reforma__image" />
+          
+
+        </div>
+
+        <!-- Direita: Textos e Botão -->
+        <div class="reforma__content">
+          <h2 class="reforma__title">
+            <span class="reforma__title-gray">Quer reformar?</span>
+            <span class="reforma__title-gold">Calma, você não precisa fazer tudo sozinho</span>
+          </h2>
+          <p class="reforma__subtitle">
+            Saiba como planejar e executar sua reforma. Conheça os serviços Obras & Serviços e planeje seus custos.
+          </p>
+          <a href="#busca" class="reforma__btn">Quero planejar minha reforma</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         STATS SECTION
+         ========================================== -->
+    <section class="stats-section">
+      <div class="container stats__container">
+        
+        <div class="stat-card">
+          <div class="stat-card__number">+ 50 mil</div>
+          <h3 class="stat-card__title">profissionais verificados</h3>
+          <p class="stat-card__text">Pedreiros, eletricistas, encanadores e diversos outros especialistas prontos para atender a sua necessidade com segurança.</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-card__number">+ 120 mil</div>
+          <h3 class="stat-card__title">obras e reformas realizadas</h3>
+          <p class="stat-card__text">De pequenos reparos a grandes construções, conectamos clientes aos melhores profissionais garantindo a entrega no prazo.</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-card__number">+ R$ 30 mi</div>
+          <h3 class="stat-card__title">em renda para profissionais</h3>
+          <p class="stat-card__text">Ajudamos milhares de trabalhadores autônomos e pequenas empresas a aumentarem seu faturamento e expandirem seus negócios.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section categories-section" id="categorias">
+      <!-- Decorador Abstrato Fundo -->
+      <div class="categories-section__bg-decor"></div>
+      
+      <div class="container categories-section__container">
+        <div class="categories-section__header">
+          <span class="categories-section__eyebrow">ENCONTRE O SERVIÇO CERTO</span>
+          <h2 class="categories-section__title">Encontre profissionais por categoria</h2>
+          <p class="categories-section__subtitle">
+            Escolha o serviço que você precisa e encontre profissionais avaliados perto de você.
+          </p>
+        </div>
+
+        <div class="categories-grid">
+          <!-- 1. Pedreiro -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__header">
+              <div class="cat-card__icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z"/><path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/><path d="M4 15v-3a6 6 0 0 1 6-6h0"/><path d="M14 6h0a6 6 0 0 1 6 6v3"/></svg>
+              </div>
+              <span class="cat-card__badge">Mais procurado</span>
+            </div>
+            <div class="cat-card__body">
+              <h3 class="cat-card__name">Pedreiro</h3>
+              <div class="cat-card__link">
+                Encontrar profissionais 
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- 2. Elétrica -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__header">
+              <div class="cat-card__icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14H4z"/></svg>
+              </div>
+              <span class="cat-card__badge">Mais procurado</span>
+            </div>
+            <div class="cat-card__body">
+              <h3 class="cat-card__name">Elétrica</h3>
+              <div class="cat-card__link">
+                Encontrar profissionais 
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- 3. Hidráulica -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__header">
+              <div class="cat-card__icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+              </div>
+            </div>
+            <div class="cat-card__body">
+              <h3 class="cat-card__name">Hidráulica</h3>
+              <div class="cat-card__link">
+                Encontrar profissionais 
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- 4. Pintura -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__header">
+              <div class="cat-card__icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="6" x="2" y="2" rx="2"/><path d="M10 16v-2a2 2 0 0 1 2-2h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect width="4" height="6" x="8" y="16" rx="1"/></svg>
+              </div>
+              <span class="cat-card__badge">Mais procurado</span>
+            </div>
+            <div class="cat-card__body">
+              <h3 class="cat-card__name">Pintura</h3>
+              <div class="cat-card__link">
+                Encontrar profissionais 
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- 5. Ar-condicionado -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__header">
+              <div class="cat-card__icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h20"/><path d="M20 14h2"/><path d="M15 14v-2a3 3 0 0 0-6 0v2"/><path d="m19.07 10.93-1.41 1.41"/></svg>
+              </div>
+            </div>
+            <div class="cat-card__body">
+              <h3 class="cat-card__name">Ar-condicionado</h3>
+              <div class="cat-card__link">
+                Encontrar profissionais 
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- 6. Reformas -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__header">
+              <div class="cat-card__icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/><path d="M17.64 15 22 10.64"/><path d="m20.91 11.7-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16 4.6V3.86a2.78 2.78 0 0 0-.43-1.45L12 7"/></svg>
+              </div>
+            </div>
+            <div class="cat-card__body">
+              <h3 class="cat-card__name">Reformas</h3>
+              <div class="cat-card__link">
+                Encontrar profissionais 
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- 7. Obras e Construção -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__header">
+              <div class="cat-card__icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+              </div>
+            </div>
+            <div class="cat-card__body">
+              <h3 class="cat-card__name">Obras e Construção</h3>
+              <div class="cat-card__link">
+                Encontrar profissionais 
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- 8. Pequenos Reparos -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__header">
+              <div class="cat-card__icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+            </div>
+            <div class="cat-card__body">
+              <h3 class="cat-card__name">Pequenos Reparos</h3>
+              <div class="cat-card__link">
+                Encontrar profissionais 
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="categories-section__footer">
+          <a href="#" class="cat-btn-secondary">
+            Ver todas as categorias
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
     </section>
@@ -276,10 +444,16 @@
           <button class="steps__tab" data-steps="pro">Para profissionais</button>
         </div>
 
-        <!-- Steps: Cliente -->
-        <div class="steps__grid" id="steps-client">
+        <div class="steps-wrapper">
+          <div class="steps-progress-line">
+            <div class="steps-progress-fill" id="steps-progress-fill">
+              <div class="steps-progress-text" id="steps-progress-text">Mais clientes.</div>
+            </div>
+          </div>
+
+          <!-- Steps: Cliente -->
+          <div class="steps__grid" id="steps-client">
           <div class="step-card">
-            <div class="step-card__number">01</div>
             <div class="step-card__icon">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <circle cx="11" cy="11" r="8" />
@@ -290,7 +464,6 @@
             <p class="step-card__text">Busque pelo serviço que você precisa e informe sua localização.</p>
           </div>
           <div class="step-card">
-            <div class="step-card__number">02</div>
             <div class="step-card__icon">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -302,7 +475,6 @@
             <p class="step-card__text">Veja perfis, avaliações e portfólios de quem está disponível na sua região.</p>
           </div>
           <div class="step-card">
-            <div class="step-card__number">03</div>
             <div class="step-card__icon">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
@@ -317,38 +489,27 @@
         <!-- Steps: Profissional (hidden initially) -->
         <div class="steps__grid steps__grid--hidden" id="steps-pro">
           <div class="step-card">
-            <div class="step-card__number">01</div>
             <div class="step-card__icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
+              <img src="assets/images/cadastro.svg" width="130" height="130" alt="Cadastro" />
             </div>
             <h3 class="step-card__title">Crie seu perfil</h3>
             <p class="step-card__text">Cadastre-se gratuitamente, informe seus serviços e região de atendimento.</p>
           </div>
           <div class="step-card">
-            <div class="step-card__number">02</div>
             <div class="step-card__icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
+              <img src="assets/images/recebaorçamento.svg" width="130" height="130" alt="Receba Oportunidades" />
             </div>
             <h3 class="step-card__title">Receba oportunidades</h3>
             <p class="step-card__text">Clientes da sua região encontram você e entram em contato diretamente.</p>
           </div>
           <div class="step-card">
-            <div class="step-card__number">03</div>
             <div class="step-card__icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <line x1="12" y1="1" x2="12" y2="23" />
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-              </svg>
+              <img src="assets/images/maisclientela.svg" width="130" height="130" alt="Cresça sua clientela" />
             </div>
             <h3 class="step-card__title">Cresça sua clientela</h3>
             <p class="step-card__text">Acumule avaliações positivas e aumente sua visibilidade na plataforma.</p>
           </div>
+        </div>
         </div>
       </div>
     </section>
@@ -625,12 +786,25 @@
     // How it works tabs
     const stepsTabs = document.querySelectorAll('.steps__tab');
     const stepsGrids = { client: document.getElementById('steps-client'), pro: document.getElementById('steps-pro') };
+    const stepsTextAnim = document.getElementById('steps-progress-text');
+
     stepsTabs.forEach(tab => {
       tab.addEventListener('click', () => {
         stepsTabs.forEach(t => t.classList.remove('steps__tab--active'));
         tab.classList.add('steps__tab--active');
         Object.values(stepsGrids).forEach(g => g.classList.add('steps__grid--hidden'));
         stepsGrids[tab.dataset.steps]?.classList.remove('steps__grid--hidden');
+        
+        if (stepsTextAnim) {
+          stepsTextAnim.classList.remove('type-anim-client', 'type-anim-pro');
+          if (tab.dataset.steps === 'client') {
+            stepsTextAnim.textContent = 'Problema resolvido.';
+            if (stepsTextAnim.dataset.isTyping === 'true') stepsTextAnim.classList.add('type-anim-client');
+          } else {
+            stepsTextAnim.textContent = 'Mais clientes.';
+            if (stepsTextAnim.dataset.isTyping === 'true') stepsTextAnim.classList.add('type-anim-pro');
+          }
+        }
       });
     });
 
@@ -725,6 +899,53 @@
         });
         
         // Dispara uma vez no load
+        window.dispatchEvent(new Event('scroll'));
+      }
+    });
+  </script>
+
+  <!-- Animação da Linha "Como funciona" -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const wrapper = document.querySelector('.steps-wrapper');
+      const fill = document.getElementById('steps-progress-fill');
+      const textAnim = document.getElementById('steps-progress-text');
+
+      if (wrapper && fill && textAnim) {
+        // Inicializar texto da aba padrão
+        const activeTab = document.querySelector('.steps__tab--active');
+        if (activeTab && activeTab.dataset.steps === 'client') {
+           textAnim.textContent = 'Problema resolvido.';
+        }
+
+        window.addEventListener('scroll', function() {
+          if (window.innerWidth < 768) return; // Só anima no desktop onde a linha aparece na horizontal
+          
+          const rect = wrapper.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+          
+          // Inicia quando o topo chega a 75% da tela e termina quando chega a 40%
+          const startOffset = windowHeight * 0.75;
+          const endOffset = windowHeight * 0.40;
+          
+          if (rect.top <= startOffset) {
+            const scrolled = startOffset - rect.top;
+            const maxScroll = startOffset - endOffset;
+            let progress = (scrolled / maxScroll) * 100;
+            
+            progress = Math.max(0, Math.min(progress, 100));
+            fill.style.width = progress + '%';
+            
+            if (progress >= 100 && textAnim.dataset.isTyping !== 'true') {
+              textAnim.dataset.isTyping = 'true';
+              const currentTab = document.querySelector('.steps__tab--active').dataset.steps;
+              textAnim.classList.add(currentTab === 'client' ? 'type-anim-client' : 'type-anim-pro');
+            } else if (progress < 100 && textAnim.dataset.isTyping === 'true') {
+              textAnim.dataset.isTyping = 'false';
+              textAnim.classList.remove('type-anim-client', 'type-anim-pro');
+            }
+          }
+        });
         window.dispatchEvent(new Event('scroll'));
       }
     });

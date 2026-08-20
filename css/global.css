@@ -89,7 +89,7 @@ img, svg { display: block; max-width: 100%; }
 
 .section__title {
   font-size: clamp(26px, 3vw, 36px);
-  font-weight: var(--weight-bold);
+  font-weight: 400; /* Headline mais fina */
   color: var(--color-text-primary);
   margin-bottom: var(--space-3);
 }
@@ -112,7 +112,7 @@ img, svg { display: block; max-width: 100%; }
   align-items: center;
   padding: 12px 32px;
   border: 2px solid var(--color-accent);
-  border-radius: var(--radius-md);
+  border-radius: 50px;
   color: var(--color-accent);
   font-weight: var(--weight-bold);
   font-size: 0.9375rem;
@@ -124,76 +124,7 @@ img, svg { display: block; max-width: 100%; }
   color: #FFF;
 }
 
-/* ============================================================
-   CATEGORIES GRID
-   ============================================================ */
-.categories__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-4);
-}
-
-@media (min-width: 480px) {
-  .categories__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 768px) {
-  .categories__grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .categories__grid {
-    grid-template-columns: repeat(8, 1fr);
-  }
-}
-
-.category-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-5) var(--space-3);
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  text-align: center;
-  transition: all var(--transition-fast);
-  cursor: pointer;
-}
-
-.category-card:hover {
-  border-color: var(--color-accent);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
-
-.category-card__icon {
-  width: 56px;
-  height: 56px;
-  background-color: var(--color-accent-light);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-accent);
-  transition: background-color var(--transition-fast);
-}
-
-.category-card:hover .category-card__icon {
-  background-color: var(--color-accent);
-  color: #FFF;
-}
-
-.category-card__name {
-  font-size: 0.8125rem;
-  font-weight: var(--weight-semi);
-  color: var(--color-text-primary);
-  line-height: 1.3;
-}
+/* CATEGORIES MOVED TO categories.css */
 
 /* ============================================================
    COMO FUNCIONA — STEPS
@@ -242,31 +173,106 @@ img, svg { display: block; max-width: 100%; }
   display: none;
 }
 
-.step-card {
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  padding: var(--space-8);
+.steps-wrapper {
   position: relative;
 }
 
-.step-card__number {
-  font-size: 3rem;
-  font-weight: var(--weight-black);
-  color: var(--color-accent-light);
-  line-height: 1;
-  margin-bottom: var(--space-4);
-  font-family: var(--font-heading);
+@media (min-width: 768px) {
+  .steps-progress-line {
+    position: absolute;
+    top: 70px; /* Alinhado ao centro dos ícones */
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background-color: var(--color-border);
+    z-index: 0;
+  }
+  
+  .steps-progress-fill {
+    width: 0%;
+    height: 100%;
+    background-color: var(--color-accent);
+    position: relative;
+    transition: width 0.4s ease-out; /* Mais fluido e suave */
+  }
+  
+  .steps-progress-text {
+    position: absolute;
+    right: -10px; /* Um pouco à direita de onde a linha termina */
+    top: 50%;
+    transform: translateY(-50%) translateX(100%);
+    color: var(--color-text-primary);
+    font-weight: 500;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    opacity: 0; /* Começa invisível */
+  }
+  
+  .steps-progress-text.type-anim-client {
+    animation: typingClient 2s steps(19, end) forwards;
+  }
+  
+  .steps-progress-text.type-anim-pro {
+    animation: typingPro 2s steps(14, end) forwards;
+  }
+}
+
+@keyframes typingClient {
+  0% { 
+    width: 0;
+    opacity: 1;
+    border-right: 2px solid var(--color-accent);
+  }
+  99% { 
+    border-right: 2px solid var(--color-accent);
+  }
+  100% { 
+    width: 175px; /* Largura para "Problema resolvido." */
+    opacity: 1;
+    border-right: transparent;
+  }
+}
+
+@keyframes typingPro {
+  0% { 
+    width: 0;
+    opacity: 1;
+    border-right: 2px solid var(--color-accent);
+  }
+  99% { 
+    border-right: 2px solid var(--color-accent);
+  }
+  100% { 
+    width: 130px; /* Largura para "Mais clientes." */
+    opacity: 1;
+    border-right: transparent;
+  }
+}
+
+.step-card {
+  background: transparent;
+  border: none;
+  padding: var(--space-8) 0;
+  position: relative;
+  z-index: 1;
 }
 
 .step-card__icon {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  background-color: var(--color-bg-main);
+  padding: 0 16px;
   color: var(--color-accent);
   margin-bottom: var(--space-4);
 }
 
 .step-card__title {
   font-size: 1.125rem;
-  font-weight: var(--weight-bold);
+  font-weight: 500; /* Texto mais fino */
   margin-bottom: var(--space-2);
   color: var(--color-text-primary);
 }
@@ -453,7 +459,7 @@ img, svg { display: block; max-width: 100%; }
   padding: 16px 32px;
   background-color: var(--color-accent);
   color: #FFF;
-  border-radius: var(--radius-md);
+  border-radius: 50px;
   font-weight: var(--weight-bold);
   font-size: 1rem;
   white-space: nowrap;

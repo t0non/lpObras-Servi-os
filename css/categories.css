@@ -1,0 +1,238 @@
+/* ============================================================
+   CATEGORIES SECTION REDESIGN
+   ============================================================ */
+
+.categories-section {
+  position: relative;
+  background-color: #FAFAFA; /* off-white muito suave */
+  padding-block: 60px;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .categories-section {
+    padding-block: 85px;
+  }
+}
+
+.categories-section__bg-decor {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 1px solid var(--color-accent);
+  background: radial-gradient(circle, rgba(212,160,23,0.05) 0%, rgba(212,160,23,0) 70%);
+  opacity: 0.6;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.categories-section__container {
+  position: relative;
+  z-index: 1;
+}
+
+/* HEADER */
+.categories-section__header {
+  text-align: center;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.categories-section__eyebrow {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 400; /* Texto mais fino conforme pedido */
+  text-transform: uppercase;
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.categories-section__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 400; /* Headline mais fina */
+  color: var(--color-text-primary);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.categories-section__subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  max-width: 580px;
+  line-height: 1.5;
+}
+
+/* GRID */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .categories-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+/* CARD */
+.cat-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 16px;
+  padding: 24px;
+  text-decoration: none;
+  transition: all 0.25s ease-out;
+  cursor: pointer;
+  height: 100%;
+}
+
+@media (max-width: 767px) {
+  .cat-card {
+    padding: 18px 16px;
+  }
+}
+
+.cat-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-accent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.cat-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 767px) {
+  .cat-card__header {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+}
+
+.cat-card__icon {
+  width: 52px;
+  height: 52px;
+  background-color: #FFF9E6; /* Creme claro, tom pastel do dourado */
+  color: var(--color-accent);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+@media (max-width: 767px) {
+  .cat-card__icon {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.cat-card:hover .cat-card__icon {
+  transform: scale(1.05);
+}
+
+.cat-card__badge {
+  background-color: #FFF9E6;
+  color: #B8860B; /* Dourado escuro */
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.cat-card__body {
+  margin-top: auto;
+}
+
+.cat-card__name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+@media (max-width: 767px) {
+  .cat-card__name {
+    font-size: 0.9375rem;
+  }
+}
+
+.cat-card__link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  transition: color 0.25s ease;
+}
+
+@media (max-width: 767px) {
+  .cat-card__link {
+    font-size: 0.8125rem;
+  }
+}
+
+.cat-card__link svg {
+  transition: transform 0.25s ease;
+}
+
+.cat-card:hover .cat-card__link {
+  color: var(--color-accent);
+}
+
+.cat-card:hover .cat-card__link svg {
+  transform: translateX(4px);
+}
+
+/* FOOTER / BUTTON */
+.categories-section__footer {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.cat-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.cat-btn-secondary:hover {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(212, 160, 23, 0.2);
+}
