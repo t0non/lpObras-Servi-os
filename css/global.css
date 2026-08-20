@@ -271,16 +271,21 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .step-icon {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
+  width: auto;
   display: block;
   margin: 0 auto;
+  object-fit: contain;
 }
 
-.step-icon--tall {
-  transform: scale(0.9);
-}
+/* Aba Cliente */
+.icon-descreva { height: 85px; }
+.icon-compare { height: 110px; }
+.icon-contrate { height: 95px; }
+
+/* Aba Profissionais */
+.icon-perfil { height: 100px; }
+.icon-phone { height: 135px; }
+.icon-clientela { height: 95px; }
 
 .step-card__title {
   font-size: 1.125rem;
