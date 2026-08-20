@@ -270,8 +270,16 @@ img, svg { display: block; max-width: 100%; }
   margin-bottom: var(--space-4);
 }
 
-.step-card__icon img {
+.step-icon {
+  width: 100px;
+  height: 100px;
   object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.step-icon--tall {
+  transform: scale(0.9);
 }
 
 .step-card__title {
