@@ -1,0 +1,156 @@
+/* ============================================================
+   OS - Obras & Serviços | Header CSS (Light Theme - Triider Style)
+   ============================================================ */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: #FFFFFF;
+  transition: box-shadow var(--transition-normal);
+}
+
+.header__container {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+.header__banner {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  text-align: center;
+  padding: 4px 10px; /* Reduzido padding lateral para dar mais espaço ao texto no mobile */
+  font-size: clamp(0.55rem, 2.8vw, 0.95rem); /* Escala perfeitamente entre celular e desktop */
+  font-weight: 400; /* Texto fino */
+  text-transform: uppercase;
+  letter-spacing: 0.05em; /* Reduzido levemente para o texto grande não quebrar fácil no mobile */
+  white-space: nowrap; /* Trava o texto para nunca quebrar em duas linhas */
+  overflow: hidden; /* Evita vazar da tela em celulares muito finos */
+  text-overflow: ellipsis; /* Se a tela for absurdamente pequena, coloca "..." */
+}
+
+/* Logo */
+.header__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Nav Desktop */
+.header__nav {
+  display: none;
+  align-items: center;
+  gap: var(--space-8);
+  flex: 1;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .header__nav {
+    display: flex;
+  }
+}
+
+.header__nav-link {
+  font-size: 0.9375rem;
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.header__nav-link:hover {
+  color: var(--color-accent);
+}
+
+/* Actions */
+.header__actions {
+  display: none;
+  align-items: center;
+  gap: var(--space-4);
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .header__actions {
+    display: flex;
+  }
+}
+
+/* Botão "Seja um Profissional" — outline */
+.header__btn-pro {
+  padding: 9px 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+  font-weight: var(--weight-bold);
+  transition: all var(--transition-fast);
+}
+
+.header__btn-pro:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* Botão "Entrar" — botão sólido */
+.header__btn-login {
+  padding: 9px 24px;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: var(--weight-bold);
+  color: #FFFFFF;
+  transition: background-color var(--transition-fast);
+}
+
+.header__btn-login:hover {
+  background-color: var(--color-accent-dark);
+  color: #FFFFFF;
+}
+
+/* Header após scroll */
+.header--scrolled {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Mobile Menu Button */
+.header__mobile-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 26px;
+  cursor: pointer;
+  order: -1;
+}
+
+@media (min-width: 1024px) {
+  .header__mobile-btn {
+    display: none;
+  }
+}
+
+.header__mobile-btn span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text-primary);
+  border-radius: 2px;
+  transition: background-color var(--transition-fast);
+}
+
+/* Mobile: Logo centralizado */
+@media (max-width: 1023px) {
+  .header__container {
+    position: relative;
+  }
+  .header__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

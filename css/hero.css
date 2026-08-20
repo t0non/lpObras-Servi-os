@@ -1,0 +1,424 @@
+/* ============================================================
+   OS - Obras & Serviços | Hero CSS (Light Theme - Redesign)
+   ============================================================ */
+
+/* ============================================================
+   HERO — Fundo Branco + Split Layout
+   ============================================================ */
+.hero {
+  position: relative;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero__container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+  /* Top spacing to account for header + banner + visual breathing room */
+  padding-top: calc(var(--header-height) + 60px);
+  padding-bottom: 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero__container {
+    grid-template-columns: minmax(0, 1fr) minmax(380px, 0.85fr);
+    /* 40px - 70px visual top spacing below header + banner */
+    padding-top: calc(var(--header-height) + 70px);
+    /* Equilíbrio para não grudar no header */
+    padding-bottom: 20px;
+    /* Reduzido para diminuir o espaço em branco */
+    gap: var(--space-10);
+    align-items: center; /* Alinha o texto e a imagem centralizados verticalmente */
+  }
+
+  .hero__content {
+    padding-top: 0;
+    margin-top: 0;
+    /* Removido o translateY manual. A seta empurrará o bloco para cima naturalmente! */
+  }
+}
+
+/* ============================================================
+   CONTEÚDO ESQUERDO
+   ============================================================ */
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  /* Using specific margins instead of gap to control precise spacing */
+  max-width: 580px;
+  position: relative; /* Adicionado para ancorar a seta abs */
+}
+
+/* A seta estava aumentando a altura da coluna esquerda, o que empurrava o texto para cima no alinhamento central. 
+   Ao colocar ela absoluta, ela não afeta mais o centro matemático do bloco! */
+.hero__arrow {
+  /* position: absolute; REMOVIDO para a seta ocupar espaço físico e não ser cortada */
+  margin-top: 5px; 
+  pointer-events: none;
+}
+
+.hero__title-dynamic {
+  display: block;
+  font-weight: var(--weight-regular);
+  /* Trocado para espessura normal (400) conforme pedido */
+  color: var(--color-accent);
+  position: relative;
+  min-height: 1.2em;
+}
+
+.hero__eyebrow {
+  font-size: 0.875rem;
+  font-weight: var(--weight-medium);
+  /* Tipografia mais fina */
+  color: var(--color-accent);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  /* Eyebrow -> headline: 12-18px */
+}
+
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 4vw, 54px);
+  font-weight: var(--weight-regular);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+  margin-bottom: 22px;
+}
+
+.text-gold {
+  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-mid) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: var(--color-accent);
+  /* Fallback */
+}
+
+.typewrite,
+.title-line2,
+.title-line2 * {
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+}
+
+/* Efeito Typewriter - Cursor Piscante */
+.typewrite>.wrap {
+  border-right: 0.03em solid var(--color-accent); /* Deixado mais fino a pedido do usuário */
+  animation: blink-cursor 1s step-end infinite;
+}
+
+@keyframes blink-cursor {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: var(--color-accent)
+  }
+}
+
+.hero__subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  max-width: 480px;
+  margin-bottom: 28px;
+  /* Subheadline -> search: 26-32px */
+}
+
+/* ============================================================
+   BOTÕES DE AÇÃO (Substituindo Buscador)
+   ============================================================ */
+.hero__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: 24px;
+  /* Space before trust signals */
+}
+
+@media (min-width: 500px) {
+  .hero__actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  border-radius: 8px;
+  /* Mais padrão e profissional */
+  font-size: 1rem;
+  font-weight: var(--weight-bold);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+/* ──────────────────────────────────────
+   BOTÃO PRIMÁRIO
+   ────────────────────────────────────── */
+.hero__btn--primary {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 4px 12px rgba(212, 160, 23, 0.2);
+}
+
+.hero__btn--primary:hover {
+  background-color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(212, 160, 23, 0.3);
+}
+
+.hero__btn--primary:active {
+  transform: translateY(0);
+}
+
+/* ──────────────────────────────────────
+   BOTÃO SECUNDÁRIO (Outline)
+   ────────────────────────────────────── */
+.hero__btn--outline {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-border);
+}
+
+.hero__btn--outline:hover {
+  border-color: var(--color-text-primary);
+  background-color: var(--color-bg-secondary);
+  transform: translateY(-2px);
+}
+
+.hero__btn--outline:active {
+  transform: translateY(0);
+}
+
+/* ============================================================
+   PROVAS DE CONFIANÇA
+   ============================================================ */
+.hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.125rem;
+  font-weight: 400; /* Tipografia fina (regular) */
+  color: var(--color-text-primary);
+  text-transform: uppercase; /* Tudo maiúsculo */
+  letter-spacing: 0.05em; /* Espaçamento leve para combinar com maiúsculas */
+}
+
+.trust-item svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   LADO DIREITO — Imagem e Blob
+   ============================================================ */
+.hero__image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* Align image to center */
+  justify-content: center;
+  /* Push to center */
+  width: 100%;
+  height: 100%;
+}
+
+/* Removido pseudo-elemento ::after pois usaremos mask-image na própria imagem */
+
+.hero__organic-bg {
+  position: absolute;
+  top: 45%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  width: 140%;
+  /* Very large, sweeping across the background */
+  max-width: 800px;
+  z-index: 0;
+  opacity: 0.5;
+  /* Soft, visible but not overpowering */
+  pointer-events: none;
+}
+
+.hero__glow {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  width: 300px;
+  height: 300px;
+  background-color: var(--color-accent-light);
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ============================================================
+   IMAGEM DO PROFISSIONAL (Livre)
+   ============================================================ */
+.hero__pro-img {
+  width: 110%; /* Crescimento leve */
+  margin-left: -5%; /* Levemente para a esquerda para não vazar a tela */
+  max-width: 900px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin-top: 20px; /* Reduzido para encaixar melhor */
+  
+  /* Máscara nativa que faz a própria imagem ficar transparente no final,
+     garantindo que o corte duro NUNCA apareça, independente do tamanho da tela */
+  -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 98%);
+  mask-image: linear-gradient(to bottom, black 65%, transparent 98%);
+}
+
+.badge-text {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  line-height: 1.2;
+}
+
+.badge-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-score {
+  font-size: 1rem;
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+}
+
+.badge-rating svg {
+  color: var(--color-accent-mid);
+}
+
+/* ============================================================
+   MOBILE OVERRIDES
+   ============================================================ */
+@media (max-width: 1023px) {
+
+  .hero__container {
+    padding-top: calc(var(--header-height) + 60px);
+    padding-bottom: 0; /* Remove espaço extra em baixo pois o gradiente cuida disso */
+    gap: 30px;
+  }
+
+  .hero__content {
+    align-items: center; /* Força os elementos flex a centralizarem no mobile */
+  }
+
+  .hero__eyebrow {
+    font-size: 0.75rem; /* Mais sutil no mobile */
+    margin-bottom: 12px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero__title {
+    font-size: clamp(28px, 8vw, 36px); /* Melhor equilíbrio de hierarquia */
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ISSO ARRUMA O TÍTULO TORTO (sobrescreve o flex-start do desktop) */
+    text-align: center;
+    margin-bottom: 16px;
+    line-height: 1.15;
+    width: 100%;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-direction: column; /* Força os botões a ficarem empilhados e perfeitos */
+    align-items: center;
+    width: 100%;
+    max-width: 350px; /* Impede os botões de ficarem muito largos em telas maiores (tablets) */
+    margin: 0 auto 30px auto;
+  }
+
+  .hero__btn {
+    width: 100%; /* Ocupa 100% da coluna/container no mobile */
+    font-size: 0.95rem;
+    padding: 14px 20px;
+  }
+
+  .hero__trust {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .trust-item {
+    font-size: 0.9rem; /* Levemente menor no mobile para não brigar com subtítulo */
+  }
+
+  .hero__arrow {
+    display: none !important; /* Esconde a seta no mobile pois polui a tela */
+  }
+
+  .hero__image {
+    margin-top: 10px;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  /* Resetando os exageros da imagem pro mobile para caber perfeito na tela */
+  .hero__pro-img {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0;
+    transform: none; /* Tira escalas estranhas */
+  }
+
+  .hero__organic-bg {
+    left: 50%;
+    top: 50%;
+  }
+
+  .hero__glow {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
