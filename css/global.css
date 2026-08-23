@@ -443,7 +443,12 @@ img, svg { display: block; max-width: 100%; }
 
 @media (max-width: 768px) {
   .testimonial-card {
-    width: 300px;
+    width: 260px;
+    padding: var(--space-4); /* Padding menor no celular */
+  }
+  .testimonial-card__text {
+    font-size: 0.875rem; /* Fonte ligeiramente menor no celular */
+    margin-bottom: var(--space-4);
   }
 }
 
