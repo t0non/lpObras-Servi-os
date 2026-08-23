@@ -13,6 +13,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -22,6 +23,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -112,7 +114,7 @@ img, svg { display: block; max-width: 100%; }
   align-items: center;
   padding: 12px 32px;
   border: 2px solid var(--color-accent);
-  border-radius: 50px;
+  border-radius: 0;
   color: var(--color-accent);
   font-weight: var(--weight-bold);
   font-size: 0.9375rem;
@@ -135,7 +137,7 @@ img, svg { display: block; max-width: 100%; }
   gap: 0;
   margin-bottom: var(--space-10);
   background-color: var(--color-bg-secondary);
-  border-radius: var(--radius-pill);
+  border-radius: 0;
   padding: 4px;
   width: fit-content;
   margin-inline: auto;
@@ -143,13 +145,30 @@ img, svg { display: block; max-width: 100%; }
 
 .steps__tab {
   padding: 10px 24px;
-  border-radius: var(--radius-pill);
+  border-radius: 0;
   font-size: 0.875rem;
   font-weight: var(--weight-semi);
   color: var(--color-text-secondary);
   cursor: pointer;
   transition: all var(--transition-fast);
   white-space: nowrap;
+}
+
+@media (max-width: 639px) {
+  .steps__tabs {
+    width: 100%;
+    display: flex;
+  }
+  .steps__tab {
+    flex: 1;
+    padding: 10px 4px;
+    font-size: 0.8rem;
+    white-space: normal;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .steps__tab--active {
@@ -258,6 +277,7 @@ img, svg { display: block; max-width: 100%; }
   padding: var(--space-8) 0;
   position: relative;
   z-index: 1;
+  text-align: center; /* Centraliza tudo dentro do card */
 }
 
 .step-card__icon {
@@ -354,25 +374,62 @@ img, svg { display: block; max-width: 100%; }
 }
 
 /* ============================================================
-   TESTIMONIALS
+   DEPOIMENTOS (MARQUEE)
    ============================================================ */
-.testimonials__grid {
-  display: grid;
-  grid-template-columns: 1fr;
+.testimonials-marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   gap: var(--space-6);
+  padding: var(--space-4) 0;
 }
 
-@media (min-width: 768px) {
-  .testimonials__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.marquee-row {
+  display: flex;
+  gap: var(--space-6);
+  width: max-content;
+}
+
+.marquee-row:hover {
+  animation-play-state: paused;
+}
+
+/* Row 1 moves left */
+.marquee-row--left {
+  animation: marqueeLeft 45s linear infinite;
+}
+
+/* Row 2 moves right */
+.marquee-row--right {
+  animation: marqueeRight 45s linear infinite;
+  transform: translateX(-50%);
+}
+
+@keyframes marqueeLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - (var(--space-6) / 2))); }
+}
+
+@keyframes marqueeRight {
+  0% { transform: translateX(calc(-50% - (var(--space-6) / 2))); }
+  100% { transform: translateX(0); }
 }
 
 .testimonial-card {
-  background: var(--color-bg-card);
+  background-color: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  width: 350px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    width: 300px;
+  }
 }
 
 .testimonial-card__stars {
@@ -476,7 +533,7 @@ img, svg { display: block; max-width: 100%; }
   padding: 16px 32px;
   background-color: var(--color-accent);
   color: #FFF;
-  border-radius: 50px;
+  border-radius: 0;
   font-weight: var(--weight-bold);
   font-size: 1rem;
   white-space: nowrap;

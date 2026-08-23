@@ -1,0 +1,213 @@
+/* ============================================================
+   OS - Obras & Serviços | Professionals Marquee
+   ============================================================ */
+
+/* ============================================================
+   KEYFRAME — slide infinito para a esquerda
+   ============================================================ */
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ============================================================
+   SECTION WRAPPER
+   ============================================================ */
+.professionals-gallery-section {
+  background: #fff;
+  padding-block: 80px 72px;
+  overflow: hidden;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.professionals-gallery__header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.professionals-gallery__eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-primary, #C9930A);
+  margin-bottom: 12px;
+}
+
+.professionals-gallery__title {
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  font-weight: 400;
+  color: var(--color-text-heading, #1a1a2e);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.professionals-gallery__subtitle {
+  font-size: 1rem;
+  color: var(--color-text-muted, #6b7280);
+  max-width: 540px;
+  margin-inline: auto;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   MARQUEE WRAPPER — fade edges
+   ============================================================ */
+.professionals-gallery__track-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+}
+
+/* ============================================================
+   MARQUEE TRACK — animação contínua
+   O track contém os itens 2x para criar loop seamless
+   ============================================================ */
+.professionals-gallery__track {
+  display: flex;
+  width: max-content;             /* cresce conforme conteúdo */
+  gap: 48px;
+  align-items: flex-end;
+  animation: marquee-scroll 20s linear infinite;
+  will-change: transform;
+  /* Espaço para o hover não ser cortado pelo overflow:hidden do wrapper */
+  padding-block: 20px;
+}
+
+/* Pausa ao hover em qualquer parte do wrapper */
+.professionals-gallery__track-wrapper:hover .professionals-gallery__track {
+  animation-play-state: paused;
+}
+
+/* ============================================================
+   PROFESSIONAL CARD — sem fundo, só a imagem solta
+   ============================================================ */
+.prof-card {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  cursor: default;
+  user-select: none;
+}
+
+.prof-card__img-wrap {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative; /* Adicionado para posicionar o degradê/sombra */
+}
+
+/* Degradê embaixo das imagens (sombra de chão) */
+.prof-card__img-wrap::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 24px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: -1;
+  pointer-events: none;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.prof-card:hover .prof-card__img-wrap::before {
+  transform: translateX(-50%) scale(0.8);
+  opacity: 0.6;
+}
+
+.prof-card__img {
+  width: auto;
+  height: 260px;          /* altura uniforme para todas */
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.prof-card:hover .prof-card__img {
+  transform: translateY(-8px) scale(1.04);
+}
+
+/* Label com o nome da profissão */
+.prof-card__label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-heading, #1a1a2e);
+  text-align: center;
+  margin-top: 16px;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease, transform 0.35s ease;
+}
+
+.prof-card:hover .prof-card__label {
+  color: var(--color-primary, #C9930A);
+  transform: translateY(-4px);
+}
+
+/* ============================================================
+   FOOTER CTA
+   ============================================================ */
+.professionals-gallery__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .professionals-gallery-section {
+    padding-block: 56px 48px;
+  }
+
+  .professionals-gallery__header {
+    margin-bottom: 40px;
+  }
+
+  .professionals-gallery__track {
+    gap: 32px;
+    animation-duration: 16s;
+  }
+
+  .prof-card__img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .professionals-gallery__track {
+    gap: 24px;
+    animation-duration: 14s;
+  }
+
+  .prof-card__img {
+    height: 140px;
+  }
+}

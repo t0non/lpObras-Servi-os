@@ -164,7 +164,7 @@
   align-items: center;
   justify-content: center;
   padding: 16px 32px;
-  border-radius: 8px;
+  border-radius: 0;
   /* Mais padrão e profissional */
   font-size: 1rem;
   font-weight: var(--weight-bold);
@@ -366,6 +366,14 @@
     padding: 0 10px;
     margin-bottom: 30px;
     width: 100%;
+  }
+
+  /* Sobrescreve o nowrap do desktop que causa barra de rolagem horizontal */
+  .typewrite,
+  .title-line2,
+  .title-line2 * {
+    white-space: normal !important;
+    word-break: normal !important;
   }
 
   .hero__actions {

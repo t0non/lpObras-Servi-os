@@ -140,7 +140,7 @@
   background-color: var(--color-accent);
   color: #FFFFFF; /* Para manter o visual da referência */
   padding: 16px 32px;
-  border-radius: 9999px; /* Totalmente redondo */
+  border-radius: 0; /* Totalmente redondo */
   font-size: 1rem;
   font-weight: 700;
   text-decoration: none;

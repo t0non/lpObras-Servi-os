@@ -1,0 +1,293 @@
+/* ============================================================
+   PRICING / ASSINATURAS (Neo-Brutalism / Creative)
+   ============================================================ */
+.pricing-section {
+  padding: 60px 0; /* Reduzido de 100px */
+  background-color: var(--color-bg-main, #ffffff);
+  position: relative;
+  overflow: hidden;
+/* Ocultando decorativos que haviam sido adicionados */
+.pricing__bg-decor {
+  display: none;
+}
+
+.pricing__header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 40px; 
+  z-index: 1;
+}
+
+.pricing__eyebrow {
+  font-size: 1.125rem;
+  color: #3b82f6; /* Blue 500 */
+  margin-bottom: 8px;
+  display: inline-block;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pricing__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 300; 
+  color: #181A20;
+  margin-bottom: 12px;
+}
+
+.pricing__subtitle {
+  font-size: 1rem; /* Reduzido de 1.25rem */
+  color: #4b5563; /* text-zinc-600 */
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   PRICING GRID
+   ============================================================ */
+.pricing__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px; /* Reduzido de 32px */
+  align-items: stretch; 
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .pricing__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .pricing__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px; /* Reduzido de 24px */
+  }
+}
+
+/* ============================================================
+   PRICING CARD (Neo-brutalism)
+   ============================================================ */
+.pricing-card-wrapper {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Rotações nos cards conforme o mockup */
+.pricing__grid .pricing-card-wrapper:nth-child(1) { transform: rotate(-1deg); }
+.pricing__grid .pricing-card-wrapper:nth-child(2) { transform: rotate(1deg); }
+.pricing__grid .pricing-card-wrapper:nth-child(3) { transform: rotate(-2deg); }
+.pricing__grid .pricing-card-wrapper:nth-child(4) { transform: rotate(1deg); }
+
+.pricing-card {
+  background: #ffffff;
+  border: 2px solid #181A20;
+  border-radius: 8px;
+  padding: 16px 12px; 
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  box-shadow: 4px 4px 0px 0px #181A20;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.pricing-card-wrapper:hover .pricing-card {
+  box-shadow: 8px 8px 0px 0px #181A20;
+  transform: translate(-4px, -4px);
+}
+
+/* Badge Mais Popular */
+.pricing-card__badge {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  background-color: #fbbf24; /* amber-400 */
+  color: #181A20;
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 4px 16px;
+  border-radius: 100px;
+  border: 2px solid #181A20;
+  transform: translateX(-50%) rotate(-4deg);
+  z-index: 10;
+}
+
+/* Header do Card */
+.pricing-card__icon {
+  width: 32px; 
+  height: 32px;
+  border-radius: 100px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px; 
+  border: 2px solid #181A20;
+  background: #fff;
+  overflow: hidden; /* Para garantir que a imagem não vaze */
+}
+.pricing-card__icon svg {
+  width: 16px;
+  height: 16px;
+}
+.pricing-card__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ajustes finos para as imagens preencherem a moldura perfeitamente */
+.icon--prata img {
+  transform: scale(1.55) translate(2.5px, 2.5px);
+}
+.icon--ouro img {
+  transform: scale(1.1);
+}
+.icon--diamante img {
+  transform: scale(1.1);
+}
+.icon--bronze img {
+  transform: scale(1.1);
+}
+
+.pricing-card__name {
+  font-size: 1.25rem; /* Reduzido de 1.5 */
+  font-weight: 800;
+  color: #181A20;
+  margin-bottom: 2px; /* Reduzido */
+}
+
+.pricing-card__desc {
+  font-size: 0.75rem; /* Reduzido de 0.875rem */
+  color: #4b5563; /* zinc-600 */
+  margin-bottom: 12px; /* Reduzido */
+  min-height: 32px; /* Ajustado */
+  line-height: 1.3;
+}
+
+/* Preço */
+.pricing-card__price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  margin-bottom: 16px; /* Reduzido */
+}
+
+.pricing-card__currency {
+  font-size: 0.875rem; /* Reduzido */
+  color: #181A20;
+  font-weight: 700;
+}
+
+.pricing-card__price {
+  font-size: 2rem; /* Reduzido de 2.75 */
+  font-weight: 800;
+  color: #181A20;
+  line-height: 1;
+}
+
+.pricing-card__period {
+  font-size: 0.875rem; /* Reduzido */
+  color: #4b5563;
+}
+
+/* Lista de Features */
+.pricing-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0; /* Reduzido */
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* Ultra compacto */
+  flex: 1;
+}
+
+.pricing-card__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #181A20;
+  font-size: 0.8125rem; /* 13px */
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.pricing-card__check-wrap {
+  width: 16px; 
+  height: 16px;
+  border-radius: 100px;
+  border: 1.5px solid #181A20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #fff;
+  margin-top: 1px;
+}
+
+.pricing-card__check-wrap svg {
+  width: 10px; 
+  height: 10px;
+  stroke: #181A20;
+  stroke-width: 3;
+}
+
+/* Botões de Ação */
+.pricing-card__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 36px; 
+  font-size: 0.875rem; 
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0;
+  border: 2px solid #181A20;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 0px 0px #181A20;
+}
+
+.pricing-card__btn:hover {
+  box-shadow: 5px 5px 0px 0px #181A20;
+  transform: translate(-2px, -2px);
+}
+
+.pricing-card__btn:active {
+  box-shadow: 1px 1px 0px 0px #181A20;
+  transform: translate(1px, 1px);
+}
+
+/* Cores dos botões conforme popularidade */
+.btn--normal {
+  background-color: #f9fafb; /* zinc-50 */
+  color: #181A20;
+}
+.btn--normal:hover {
+  background-color: #ffffff;
+}
+
+.btn--popular {
+  background-color: #fbbf24; /* amber-400 */
+  color: #181A20;
+}
+.btn--popular:hover {
+  background-color: #fcd34d; /* amber-300 */
+}
+
+/* Cores específicas dos ícones do Header para dar o toque final */
+.icon--bronze { background-color: #fef3c7; } /* Fundo claro para realçar o ícone */
+.icon--prata { background-color: #f3f4f6; }
+.icon--ouro { background-color: #fef3c7; }
+.icon--diamante { background-color: #ecfdf5; }
+
+.icon--bronze svg { fill: none; stroke: #b45309; } /* amber-700 / marrom */
+.icon--prata svg { fill: none; stroke: #4b5563; } /* zinc-600 */
+.icon--ouro svg { fill: #f59e0b; stroke: #d97706; } /* amber-500 / amber-600 */
+.icon--diamante svg { fill: none; stroke: #059669; } /* emerald-600 */
