@@ -364,6 +364,30 @@
   }
 }
 
+/* ============================================================
+   IMAGEM MOBILE (CURIOSO ENTRE TEXTO E BUSCA)
+   ============================================================ */
+.search-section__image-wrapper--mobile {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.search-section__image-mobile {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: contain;
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+@media (min-width: 1024px) {
+  .search-section__image-wrapper--mobile {
+    display: none;
+  }
+}
+
 .benefit-item {
   display: flex;
   align-items: center;
