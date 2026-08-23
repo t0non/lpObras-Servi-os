@@ -1792,6 +1792,29 @@
       });
     })();
   </script>
+
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const header = document.getElementById('header');
+      const navLinks = document.querySelectorAll('.header__nav-link');
+      
+      if (mobileBtn && header) {
+        mobileBtn.addEventListener('click', function() {
+          header.classList.toggle('header--menu-open');
+        });
+        
+        // Close menu when clicking a link
+        navLinks.forEach(function(link) {
+          link.addEventListener('click', function() {
+            header.classList.remove('header--menu-open');
+          });
+        });
+      }
+    });
+  </script>
+
 </body>
 
 </html>
