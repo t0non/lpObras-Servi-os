@@ -201,12 +201,21 @@ img, svg { display: block; max-width: 100%; }
   position: relative;
 }
 
+/* Oculta no mobile por padrão */
+.steps-progress-line {
+  display: none;
+}
+.steps-progress-text {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .steps-progress-line {
+    display: block; /* Volta a aparecer no desktop */
     position: absolute;
     top: 70px; /* Alinhado ao centro dos ícones */
-    left: 10%;
-    width: 80%;
+    left: 16.66%; /* Começa bem no meio da primeira coluna */
+    width: 66.66%; /* Vai até o meio da última coluna */
     height: 3px;
     background-color: var(--color-border);
     z-index: 0;
@@ -221,6 +230,7 @@ img, svg { display: block; max-width: 100%; }
   }
   
   .steps-progress-text {
+    display: block; /* Volta a aparecer no desktop */
     position: absolute;
     right: -10px; /* Um pouco à direita de onde a linha termina */
     top: 50%;
@@ -481,6 +491,7 @@ img, svg { display: block; max-width: 100%; }
   font-size: 0.9375rem;
   color: var(--color-text-primary);
   margin-bottom: 2px;
+  font-weight: 400; /* Tipografia fina conforme solicitado */
 }
 
 .testimonial-card__role {
@@ -610,10 +621,64 @@ img, svg { display: block; max-width: 100%; }
   color: var(--color-accent);
 }
 
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: var(--space-6);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9375rem;
+}
+
+.contact-item svg {
+  color: var(--color-primary);
+  opacity: 0.9;
+}
+
 .footer__bottom {
   border-top: 1px solid rgba(255,255,255,0.1);
   padding-top: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.footer__copyright p {
   font-size: 0.875rem;
   color: rgba(255,255,255,0.4);
+}
+
+.footer__badges {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.badge-text {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 12px;
+  color: rgba(255,255,255,0.6);
 }

@@ -31,10 +31,11 @@
 }
 
 .about-os__image {
-  max-width: 100%;
+  max-width: 75%;
   height: auto;
   display: block;
-  /* Assuming the image is cut off at the bottom */
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
 
 /* RATING CARD (Floating) */
