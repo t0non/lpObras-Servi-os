@@ -143,7 +143,7 @@
 
 /* Ajustes finos para as imagens preencherem a moldura perfeitamente */
 .icon--prata img {
-  transform: scale(1.4);
+  transform: scale(1.7);
 }
 .icon--ouro img {
   transform: scale(1.1);
