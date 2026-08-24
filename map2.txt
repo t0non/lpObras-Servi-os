@@ -1,0 +1,14 @@
+header | header | Heading: No heading
+hero | hero | Heading: O lugar certo para                            encontrar prof
+como-funciona | how-it-works | Heading: O que é o OS?
+categorias | section professionals-gallery-section | Heading: Profissionais prontos para te atender
+como-funciona | section section--white | Heading: Como funciona?
+busca | search-section | Heading: A solução certa para sua obra, em um clique.
+reforma | reforma-section | Heading: Quer reformar?             Calma, você não precisa fazer tud
+sobre | section about-os-section | Heading: 5 anos conectandoclientes e profissionais
+None | stats-section | Heading: usuários registrados
+pro-benefits | section pro-benefits-section | Heading: Você é profissional de              manutenção oureforma?
+planos | pricing-section | Heading: Um plano para cada fase do seu negócio
+depoimentos | section section--white | Heading: O que nossos usuários dizem
+None | section section--white cta-section | Heading: É profissional e quer novos clientes?
+None | footer | Heading: Para Clientes

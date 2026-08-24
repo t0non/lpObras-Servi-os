@@ -1,0 +1,14 @@
+<header> id: header | class: header
+<section> id: hero | class: hero
+<section> id: como-funciona | class: how-it-works
+<section> id: categorias | class: section professionals-gallery-section
+<section> id: como-funciona | class: section section--white
+<section> id: busca | class: search-section
+<section> id: reforma | class: reforma-section
+<section> id: sobre | class: section about-os-section
+<section> id: None | class: stats-section
+<section> id: pro-benefits | class: section pro-benefits-section
+<section> id: planos | class: pricing-section
+<section> id: depoimentos | class: section section--white
+<section> id: None | class: section section--white cta-section
+<footer> id: None | class: footer
