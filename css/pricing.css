@@ -97,6 +97,7 @@
 .pricing-card-wrapper {
   perspective: 1200px;
   height: 100%;
+  position: relative;
 }
 
 .pricing-card {
@@ -280,7 +281,12 @@
   width: 100%; height: 100%; object-fit: cover;
   transform: scale(1.2); /* Ajuste genérico, dependendo da imagem */
 }
-.icon--prata img { transform: scale(1.6); }
+.icon--prata img { 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.4);
+}
 
 /* Cores específicas dos Medalhões */
 .icon--bronze {
@@ -305,23 +311,62 @@
   transform: translateY(-3px) rotate(3deg);
 }
 
-/* BADGE "MAIS POPULAR" NO OURO */
+/* BADGE PREMIUM NO OURO */
 .pricing-card__badge {
   position: absolute;
-  top: -16px;
+  top: -22px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, #FFF1B3, #F5C342);
-  color: #3f2a00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #FFF3C4 0%, #D4A017 40%, #A67C00 100%);
+  color: #1A1A1A;
   font-size: 0.75rem;
   font-weight: 800;
-  padding: 6px 16px;
+  padding: 8px 20px;
   border-radius: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 4px 12px rgba(184, 121, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 20px rgba(212, 160, 23, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.7);
   z-index: 10;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  overflow: hidden;
+  animation: badgeFloat 3s ease-in-out infinite, badgeFadeIn 0.8s ease-out forwards;
+}
+
+/* Efeito de brilho / Shimmer passando no selo */
+.pricing-card__badge::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -150%;
+  width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.9), transparent);
+  transform: skewX(-20deg);
+  animation: badgeShimmer 4s infinite;
+}
+
+/* Destaque no Hover do Card Ouro */
+.pricing-card-wrapper:hover .pricing-card__badge {
+  box-shadow: 0 12px 28px rgba(212, 160, 23, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+  filter: brightness(1.1);
+}
+
+@keyframes badgeFloat {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-4px); }
+}
+
+@keyframes badgeFadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes badgeShimmer {
+  0% { left: -150%; }
+  15% { left: 200%; }
+  100% { left: 200%; }
 }
 
 /* ============================================================
