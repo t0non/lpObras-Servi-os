@@ -69,14 +69,14 @@
   <link rel="stylesheet" href="css/global.css?v=67" />
   <link rel="stylesheet" href="css/header.css?v=56" />
   <link rel="stylesheet" href="css/hero.css?v=56" />
-  <link rel="stylesheet" href="css/search.css?v=15" />
+  <link rel="stylesheet" href="css/search.css?v=17" />
   <link rel="stylesheet" href="css/how-it-works.css?v=57" />
   <link rel="stylesheet" href="css/categories.css?v=57" />
   <link rel="stylesheet" href="css/icp.css?v=10" />
   <link rel="stylesheet" href="css/stats.css?v=3" />
-  <link rel="stylesheet" href="css/pricing.css?v=1" />
+  <link rel="stylesheet" href="css/pricing.css?v=3" />
   <link rel="stylesheet" href="css/professionals-gallery.css?v=1" />
-  <link rel="stylesheet" href="css/about-os.css?v=1" />
+  <link rel="stylesheet" href="css/about-os.css?v=3" />
   <link rel="stylesheet" href="css/pro-benefits.css?v=1" />
 
 </head>
@@ -105,8 +105,8 @@
       <nav class="header__nav" aria-label="Menu principal">
         <a href="#" class="header__nav-link">Início</a>
         <a href="#como-funciona" class="header__nav-link">Como funciona?</a>
-        <a href="#categorias" class="header__nav-link">Serviços</a>
-        <a href="#sobre" class="header__nav-link">Quem somos</a>
+        <a href="#categorias" class="header__nav-link">Profissionais</a>
+        <a href="#sobre" class="header__nav-link">Sobre a OS</a>
       </nav>
 
       <!-- Ações -->
@@ -180,10 +180,9 @@
          ========================================== -->
     <section class="how-it-works" id="como-funciona">
       <div class="how-it-works__header">
-        <h2 class="how-it-works__title">O que é o OS?</h2>
+        <h2 class="how-it-works__title">O que é a OS - Obras & Serviços?</h2>
         <p class="how-it-works__subtitle">
-          O OS é a maior plataforma de contratação de serviços do Brasil. Conectamos Profissionais de todo o Brasil com
-          pessoas solicitando serviço, atendendo com qualidade, facilidade e rapidez todos os tipos de necessidade.
+          A Obras & Serviços é a plataforma que une clientes, profissionais e lojistas em um só lugar. Transformamos a forma como você contrata e oferece serviços, garantindo praticidade, confiança e rapidez em cada atendimento, de norte a sul do Brasil.
         </p>
       </div>
 
@@ -204,8 +203,8 @@
             <!-- Pro Worker Card with stars -->
             <img src="assets/images/profissionais.svg" alt="Ícone de Profissionais" width="100" height="100" />
           </div>
-          <h3 class="hiw-card__title">Receba até quatro orçamentos</h3>
-          <p class="hiw-card__text">Profissionais avaliados entram em contato com você em instantes!</p>
+          <h3 class="hiw-card__title">Receba orçamentos</h3>
+          <p class="hiw-card__text">Receba orçamentos de especialistas na área que busca e resolva o seu problema sem sair de casa.</p>
         </div>
 
         <!-- Card 3 -->
@@ -214,8 +213,8 @@
             <!-- Thumbs up -->
             <img src="assets/images/like.svg" alt="Ícone de Avaliação" width="100" height="100" />
           </div>
-          <h3 class="hiw-card__title">Escolha o melhor</h3>
-          <p class="hiw-card__text">Negocie direto com eles. Fácil como nunca foi antes!</p>
+          <h3 class="hiw-card__title">Negocie direto com o profissional</h3>
+          <p class="hiw-card__text">Sem intermediários, rápido e descomplicado.</p>
         </div>
       </div>
     </section>
@@ -231,14 +230,14 @@
         </div>
 
         <div class="steps__tabs">
-          <button class="steps__tab steps__tab--active" data-steps="client">Para quem precisa contratar</button>
-          <button class="steps__tab" data-steps="pro">Para profissionais</button>
+          <button class="steps__tab steps__tab--active" data-steps="client">Para Clientes</button>
+          <button class="steps__tab" data-steps="pro">Para Profissionais</button>
+          <button class="steps__tab" data-steps="lojista">Para Lojistas</button>
         </div>
 
         <div class="steps-wrapper">
           <div class="steps-progress-line">
             <div class="steps-progress-fill" id="steps-progress-fill">
-              <div class="steps-progress-text" id="steps-progress-text">Mais clientes.</div>
             </div>
           </div>
 
@@ -248,8 +247,8 @@
             <div class="step-card__icon">
               <img src="assets/images/descreva.png" class="step-icon icon-descreva" alt="Descreva o que precisa" />
             </div>
-            <h3 class="step-card__title">Descreva o que precisa</h3>
-            <p class="step-card__text">Busque pelo serviço que você precisa e informe sua localização.</p>
+            <h3 class="step-card__title">Crie seu perfil</h3>
+            <p class="step-card__text">Cadastre-se gratuitamente, informe sua localização, busque pelo profissional, solicite orçamentos ou entre em contato direto.</p>
           </div>
           <div class="step-card animate-on-scroll fade-up">
             <div class="step-card__icon">
@@ -262,8 +261,8 @@
             <div class="step-card__icon">
               <img src="assets/images/contrate.png" class="step-icon icon-contrate" alt="Contrate com segurança" />
             </div>
-            <h3 class="step-card__title">Contrate com segurança</h3>
-            <p class="step-card__text">Escolha o profissional ideal e finalize o serviço com toda a garantia da OS.</p>
+            <h3 class="step-card__title">Contrate sem complicação</h3>
+            <p class="step-card__text">Avalie as opções e feche o serviço direto com o profissional da sua escolha.</p>
           </div>
         </div>
 
@@ -274,21 +273,46 @@
               <img src="assets/images/cadastro.png" class="step-icon icon-perfil" alt="Crie seu perfil" />
             </div>
             <h3 class="step-card__title">Crie seu perfil</h3>
-            <p class="step-card__text">Cadastre-se gratuitamente, informe seus serviços e região de atendimento.</p>
+            <p class="step-card__text">Escolha o melhor plano para você, cadastre até 3 profissões, adicione até 9 fotos no portfólio e conte com um escritório virtual completo. Tudo isso sem fidelidade e com liberdade para cancelar quando quiser.</p>
           </div>
           <div class="step-card animate-on-scroll fade-up">
             <div class="step-card__icon">
               <img src="assets/images/recebaorçamento.png" class="step-icon icon-phone" alt="Receba oportunidades" />
             </div>
             <h3 class="step-card__title">Receba oportunidades</h3>
-            <p class="step-card__text">Clientes da sua região encontram você e entram em contato diretamente.</p>
+            <p class="step-card__text">Conecte-se diretamente com quem precisa dos seus serviços. O cliente fala com você pelo WhatsApp de forma direta, sem intermediários, para fechar o trabalho com rapidez.</p>
           </div>
           <div class="step-card animate-on-scroll fade-up">
             <div class="step-card__icon">
               <img src="assets/images/maisclientela.png" class="step-icon icon-clientela" alt="Cresça sua clientela" />
             </div>
-            <h3 class="step-card__title">Cresça sua clientela</h3>
-            <p class="step-card__text">Acumule avaliações positivas e aumente sua visibilidade na plataforma.</p>
+            <h3 class="step-card__title">Amplie sua base de clientes</h3>
+            <p class="step-card__text">Dê mais visibilidade ao seu trabalho integrando suas redes sociais diretamente no perfil, conquiste novos contratos e faça sua clientela crescer todos os dias.</p>
+          </div>
+        </div>
+
+        <!-- Steps: Lojista (hidden initially) -->
+        <div class="steps__grid steps__grid--hidden" id="steps-lojista">
+          <div class="step-card animate-on-scroll fade-up">
+            <div class="step-card__icon">
+              <img src="assets/images/anuncia_seus_produtos.png" class="step-icon icon-perfil" alt="Anuncie seus produtos" />
+            </div>
+            <h3 class="step-card__title">Anuncie seus Produtos</h3>
+            <p class="step-card__text">Cadastre seus produtos, ferramentas, materiais de construção e equipamentos com facilidade e alcance quem está construindo ou reformando na sua região.</p>
+          </div>
+          <div class="step-card animate-on-scroll fade-up">
+            <div class="step-card__icon">
+              <img src="assets/images/potencialize_suas_vendas.png" class="step-icon icon-phone" alt="Potencialize suas vendas" />
+            </div>
+            <h3 class="step-card__title">Potencialize suas vendas</h3>
+            <p class="step-card__text">Ganhe destaque regional, conecte-se diretamente com profissionais e clientes, feche pedidos, expanda suas vendas sem perder tempo.</p>
+          </div>
+          <div class="step-card animate-on-scroll fade-up">
+            <div class="step-card__icon">
+              <img src="assets/images/aumentar_faturamento.png" class="step-icon icon-clientela" alt="Aumente seu faturamento" />
+            </div>
+            <h3 class="step-card__title">Aumente seu faturamento</h3>
+            <p class="step-card__text">Dê mais visibilidade ao seu negócio, feche novas parcerias comerciais e faça o seu comércio crescer de forma constante</p>
           </div>
         </div>
         </div>
@@ -303,7 +327,7 @@
           <span class="professionals-gallery__eyebrow">QUEM FAZ ACONTECER</span>
           <h2 class="professionals-gallery__title">Profissionais prontos para te atender</h2>
           <p class="professionals-gallery__subtitle">
-            Da elétrica à construção, conectamos você aos melhores especialistas verificados da sua região.
+            Do projeto à decoração, conectamos você aos melhores profissionais da sua região.
           </p>
         </div>
       </div>
@@ -315,7 +339,7 @@
           <!-- SET 1 (original) -->
           <div class="prof-card">
             <div class="prof-card__img-wrap">
-              <img src="assets/images/Pedreiro.svg" alt="Pedreiro" class="prof-card__img" />
+              <img src="assets/images/Pedreiro.png" alt="Pedreiro" class="prof-card__img" />
             </div>
             <div class="prof-card__label">Pedreiro</div>
           </div>
@@ -359,7 +383,7 @@
           <!-- SET 2 (duplicado para loop seamless) -->
           <div class="prof-card">
             <div class="prof-card__img-wrap">
-              <img src="assets/images/Pedreiro.svg" alt="" class="prof-card__img" />
+              <img src="assets/images/Pedreiro.png" alt="" class="prof-card__img" />
             </div>
             <div class="prof-card__label">Pedreiro</div>
           </div>
@@ -427,7 +451,7 @@
         <div class="search-section__content animate-on-scroll fade-up">
           <div class="search-section__header">
           <p class="search-section__eyebrow">OBRAS, REFORMAS E MANUTENÇÃO</p>
-          <h2 class="search-section__title">A solução certa para sua obra, em um <span style="color: var(--color-accent);">clique</span>.<img src="assets/images/click.gif?v=3" alt="Cursor clicando" class="click-gif" /></h2>
+          <h2 class="search-section__title">Sua obra sem dor de cabeça, do alicerce ao acabamento, em um <span style="color: var(--color-accent);">clique</span>.<img src="assets/images/click.gif?v=3" alt="Cursor clicando" class="click-gif" /></h2>
           <p class="search-section__subtitle">
             Busque por categorias, encontre profissionais verificados e fale diretamente com quem pode resolver o seu serviço.
           </p>
@@ -439,12 +463,21 @@
 
         <div class="search-section__panel">
           
+          <!-- NOVO: Toggle de Busca -->
+          <div class="search-toggle">
+            <input type="radio" id="search-pro" name="search-type" value="profissional" checked>
+            <label for="search-pro">Profissionais</label>
+            <input type="radio" id="search-loj" name="search-type" value="lojista">
+            <label for="search-loj">Lojistas</label>
+            <div class="search-toggle__bg"></div>
+          </div>
+
           <div class="search-field search-field--service">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-            <input type="text" class="search-input" placeholder="Qual serviço você busca?" autocomplete="off" />
+            <input type="text" class="search-input" id="search-input-service" placeholder="Qual profissional ou lojista você busca?" autocomplete="off" />
             
             <div class="search-dropdown">
-              <ul class="search-dropdown__list">
+              <ul class="search-dropdown__list" id="search-dropdown-list">
                 <li class="search-dropdown__item">Pedreiro</li>
                 <li class="search-dropdown__item">Eletricista</li>
                 <li class="search-dropdown__item">Encanador</li>
@@ -462,7 +495,7 @@
           </div>
 
           <button class="btn-search-primary">
-            Buscar profissionais
+            Buscar profissionais e lojistas
           </button>
         </div>
 
@@ -482,7 +515,7 @@
         
         <!-- Esquerda: Imagem com Badge Flutuante e Fundo Orgânico -->
         <div class="reforma__image-wrapper">
-          <img src="assets/images/ICP.png" alt="Quer reformar?" class="reforma__image" />
+          <img src="assets/images/profissional_hero.png" alt="Vai encarar uma reforma?" class="reforma__image" />
           
 
         </div>
@@ -490,11 +523,11 @@
         <!-- Direita: Textos e Botão -->
         <div class="reforma__content">
           <h2 class="reforma__title">
-            <span class="reforma__title-gray">Quer reformar?</span>
-            <span class="reforma__title-gold">Calma, você não precisa fazer tudo sozinho</span>
+            <span class="reforma__title-gray">Vai encarar uma reforma?</span>
+            <span class="reforma__title-gold">Chega de dor de cabeça.</span>
           </h2>
           <p class="reforma__subtitle">
-            Saiba como planejar e executar sua reforma. Conheça os serviços Obras & Serviços e planeje seus custos.
+            Encontre os profissionais certos para cada etapa e tire o seu projeto do papel.
           </p>
           <a href="#busca" class="reforma__btn">Quero planejar minha reforma</a>
         </div>
@@ -509,162 +542,36 @@
 
 
     <!-- ==========================================
-         SOBRE OS / BANNER CTA (Substituindo 'Por que usar a OS?')
+         SOBRE OS / QUEM SOMOS
          ========================================== -->
-    <section class="section about-os-section" id="sobre">
-      <div class="container about-os__container">
-        
-        <!-- Lado Esquerdo: Imagem + Card de Avaliação -->
-        <div class="about-os__image-wrapper animate-on-scroll fade-up">
-          <img src="assets/images/5anos.png?v=2" alt="Profissional OS 5 Anos" class="about-os__image" />
+    <section class="section about-cards-section" id="sobre">
+      <div class="container">
+        <div class="section__header text-center animate-on-scroll fade-up">
+          <h2 class="section__title">Sobre a OS</h2>
         </div>
-
-        <!-- Lado Direito: Título + Botões -->
-        <div class="about-os__content animate-on-scroll fade-up delay-200">
-          <h2 class="about-os__title">5 anos conectando<br><span>clientes e profissionais</span></h2>
-          <div class="about-os__actions">
-            <a href="#categorias" class="about-os__btn about-os__btn--primary">Encontrar profissionais</a>
-            <a href="#" class="about-os__btn about-os__btn--outline">Sou profissional</a>
+        
+        <div class="about-cards__grid">
+          <!-- Card 1 -->
+          <div class="about-card animate-on-scroll fade-up">
+            <h3 class="about-card__title">Por que a OS – Obras & Serviços Existe?</h3>
+            <p class="about-card__text">A OS – Obras & Serviços nasceu para eliminar a dor de cabeça de quem precisa encontrar um bom profissional e a dificuldade de quem quer mostrar o próprio trabalho. Acreditamos que contratar um serviço ou conquistar novos clientes não deveria ser algo burocrático, cheio de intermediários ou taxas abusivas. Criamos um espaço direto, transparente e feito para valorizar o mercado local.</p>
           </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ==========================================
-         BENEFÍCIOS PARA PROFISSIONAIS (Nova Seção)
-         ========================================== -->
-    <section class="section pro-benefits-section" id="pro-benefits">
-      <div class="container pro-benefits__container">
-        
-        <!-- Lado Esquerdo: Conteúdo -->
-        <div class="pro-benefits__content">
-          <h2 class="pro-benefits__title">
-            Você é profissional de <br />
-            <span class="pro-benefits__highlight">manutenção ou<br>reforma?</span>
-          </h2>
-          <p class="pro-benefits__subtitle">
-            Conheça os benefícios de ser um profissional OS. Veja o que dizem os profissionais cadastrados
-          </p>
-          <a href="#" class="pro-benefits__btn">Quero ser profissional OS</a>
-        </div>
-
-        <!-- Lado Direito: Depoimentos Verticais -->
-        <div class="pro-benefits__testimonials">
           
-          
-          <div class="pro-testimonial-card">
-            <div class="pro-testimonial-card__header">
-              <div class="pro-testimonial-card__avatar">
-                <img src="https://ui-avatars.com/api/?name=Carlos+Silva&background=eab308&color=fff" alt="Carlos Alberto Silva"/>
-              </div>
-              <div class="pro-testimonial-card__info">
-                <h3 class="pro-testimonial-card__name">Carlos Silva</h3>
-                <span class="pro-testimonial-card__rating">4.8 <span class="star">★</span> (85)</span>
-              </div>
-            </div>
-            <div class="pro-testimonial-card__content">
-              <p class="pro-testimonial-card__text">
-                A plataforma transformou minha rotina. Hoje consigo preencher minha agenda toda semana sem precisar sair procurando clientes.
-              </p>
-            </div>
-            <div class="pro-testimonial-card__footer">
-              <span class="since">26/11/2025</span>
-            </div>
+          <!-- Card 2 -->
+          <div class="about-card animate-on-scroll fade-up delay-100">
+            <h3 class="about-card__title">Nossa Missão</h3>
+            <p class="about-card__text">Simplificar a conexão entre clientes e profissionais, impulsionando a economia local através da tecnologia e da autonomia. Trabalhamos para dar visibilidade a quem faz acontecer, oferecendo uma forma prática de encontrar especialistas para qualquer necessidade, do pequeno reparo à grande obra, sempre com negociação direta.</p>
           </div>
 
-          <div class="pro-testimonial-card">
-            <div class="pro-testimonial-card__header">
-              <div class="pro-testimonial-card__avatar">
-                <img src="https://ui-avatars.com/api/?name=Marcos+Ferreira&background=f97316&color=fff" alt="Marcos Paulo Ferreira"/>
-              </div>
-              <div class="pro-testimonial-card__info">
-                <h3 class="pro-testimonial-card__name">Marcos Ferreira</h3>
-                <span class="pro-testimonial-card__rating">5.0 <span class="star">★</span> (214)</span>
-              </div>
-            </div>
-            <div class="pro-testimonial-card__content">
-              <p class="pro-testimonial-card__text">
-                Graças à plataforma consegui dobrar minha renda mensal. Antes eu dependia só de indicações, agora tenho serviços todos os dias.
-              </p>
-            </div>
-            <div class="pro-testimonial-card__footer">
-              <span class="since">24/11/2026</span>
-            </div>
+          <!-- Card 3 -->
+          <div class="about-card animate-on-scroll fade-up delay-200">
+            <h3 class="about-card__title">O que nos move</h3>
+            <p class="about-card__text">O respeito pelo trabalho de quem constrói, conserta e transforma o nosso dia a dia. O que nos faz levantar da cama é saber que podemos dar voz e espaço para o profissional crescer, ao mesmo tempo em que facilitamos a vida de quem está com um problema em casa e precisa de uma solução rápida e sem enrolação.</p>
           </div>
-
-          <div class="pro-testimonial-card">
-            <div class="pro-testimonial-card__header">
-              <div class="pro-testimonial-card__avatar">
-                <img src="https://ui-avatars.com/api/?name=Roberto+Costa&background=3b82f6&color=fff" alt="Roberto Costa Souza"/>
-              </div>
-              <div class="pro-testimonial-card__info">
-                <h3 class="pro-testimonial-card__name">Roberto Costa</h3>
-                <span class="pro-testimonial-card__rating">4.9 <span class="star">★</span> (132)</span>
-              </div>
-            </div>
-            <div class="pro-testimonial-card__content">
-              <p class="pro-testimonial-card__text">
-                O aplicativo é muito fácil de usar e me ajudou a profissionalizar meu trabalho. A segurança de fechar o serviço faz a diferença.
-              </p>
-            </div>
-            <div class="pro-testimonial-card__footer">
-              <span class="since">23/11/2025</span>
-            </div>
-          </div>
-
-          <div class="pro-testimonial-card">
-            <div class="pro-testimonial-card__header">
-              <div class="pro-testimonial-card__avatar">
-                <img src="https://ui-avatars.com/api/?name=Juliana+Melo&background=ec4899&color=fff" alt="Juliana Melo"/>
-              </div>
-              <div class="pro-testimonial-card__info">
-                <h3 class="pro-testimonial-card__name">Juliana Melo</h3>
-                <span class="pro-testimonial-card__rating">5.0 <span class="star">★</span> (92)</span>
-              </div>
-            </div>
-            <div class="pro-testimonial-card__content">
-              <p class="pro-testimonial-card__text">
-                Gostei muito do serviço. Fui muito bem atendida, aumentei a minha carteira de clientes de forma absurda! Super acessível e ágil.
-              </p>
-            </div>
-            <div class="pro-testimonial-card__footer">
-              <span class="since">22/11/2026</span>
-            </div>
-          </div>
-
-
         </div>
-
       </div>
     </section>
 
-    <!-- ==========================================
-         STATS SECTION
-         ========================================== -->
-    <section class="stats-section">
-      <div class="container stats__container">
-        
-        <div class="stat-card animate-on-scroll fade-up">
-          <div class="stat-card__number">+ 12 mil</div>
-          <h3 class="stat-card__title">usuários registrados</h3>
-          <p class="stat-card__text">Várias pessoas confiaram na gente para encontrar profissionais qualificados e de confiança para ajudarem com seus serviços de manutenção e reforma.</p>
-        </div>
-
-        <div class="stat-card animate-on-scroll fade-up">
-          <div class="stat-card__number">+ 4.500</div>
-          <h3 class="stat-card__title">projetos abraçados</h3>
-          <p class="stat-card__text">Da instalação de luminária até a pintura de parede, contamos com diversos serviços de reforma e decoração para realizar o desejo de nossos clientes ou resolver seus problemas domésticos.</p>
-        </div>
-
-        <div class="stat-card animate-on-scroll fade-up">
-          <div class="stat-card__number">+ R$ 2,5 mi</div>
-          <h3 class="stat-card__title">em renda para profissionais</h3>
-          <p class="stat-card__text">Ajudamos a mudar a vida de muitos profissionais de serviços aumentando sua renda e dando mais condições para eles alcançarem seus objetivos e melhorarem sua qualidade de vida.</p>
-        </div>
-
-      </div>
-    </section>
 
     <!-- ==========================================
          DEPOIMENTOS
@@ -959,289 +866,6 @@
             </div>
           </div>
           </div>
-          <div class="marquee-row marquee-row--right">
-
-          <div class="testimonial-card">
-
-            <div class="testimonial-card__stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-            </div>
-            <p class="testimonial-card__text">"Melhor plataforma que já usei! Pedi orçamento para pintura e fechei no mesmo dia. O pintor foi super educado."</p>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__avatar" style="background-color: #ef4444;">RA</div>
-              <div>
-                <strong class="testimonial-card__name">Rodrigo Alves</strong>
-                <span class="testimonial-card__role">Cliente • Avaliado em 2025</span>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-
-            <div class="testimonial-card__stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-            </div>
-            <p class="testimonial-card__text">"O serviço de limpeza pós-obra foi maravilhoso. Deixaram minha casa brilhando. Recomendo a plataforma de olhos fechados."</p>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__avatar" style="background-color: #8b5cf6;">JC</div>
-              <div>
-                <strong class="testimonial-card__name">Juliana Costa</strong>
-                <span class="testimonial-card__role">Cliente • Avaliado em 2026</span>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-
-            <div class="testimonial-card__stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-            </div>
-            <p class="testimonial-card__text">"Consegui um pedreiro pra consertar o telhado antes das chuvas. Foi a salvação! Orçamento rápido e transparente."</p>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__avatar" style="background-color: #06b6d4;">TM</div>
-              <div>
-                <strong class="testimonial-card__name">Thiago Martins</strong>
-                <span class="testimonial-card__role">Cliente • Avaliado em 2025</span>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-
-            <div class="testimonial-card__stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-            </div>
-            <p class="testimonial-card__text">"A facilidade de comparar os orçamentos é genial. Economizei mais de 30% na instalação do ar condicionado."</p>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__avatar" style="background-color: #f97316;">BS</div>
-              <div>
-                <strong class="testimonial-card__name">Beatriz Souza</strong>
-                <span class="testimonial-card__role">Cliente • Avaliado em 2025</span>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-
-            <div class="testimonial-card__stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-            </div>
-            <p class="testimonial-card__text">"Chamei um eletricista para trocar a fiação antiga. Além de pontual, ele explicou tudo o que ia fazer. Profissional demais!"</p>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__avatar" style="background-color: #14b8a6;">RA</div>
-              <div>
-                <strong class="testimonial-card__name">Ricardo Almeida</strong>
-                <span class="testimonial-card__role">Cliente • Avaliado em 2026</span>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-
-            <div class="testimonial-card__stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-            </div>
-            <p class="testimonial-card__text">"Melhor plataforma que já usei! Pedi orçamento para pintura e fechei no mesmo dia. O pintor foi super educado."</p>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__avatar" style="background-color: #ef4444;">RA</div>
-              <div>
-                <strong class="testimonial-card__name">Rodrigo Alves</strong>
-                <span class="testimonial-card__role">Cliente • Avaliado em 2025</span>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-
-            <div class="testimonial-card__stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-            </div>
-            <p class="testimonial-card__text">"O serviço de limpeza pós-obra foi maravilhoso. Deixaram minha casa brilhando. Recomendo a plataforma de olhos fechados."</p>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__avatar" style="background-color: #8b5cf6;">JC</div>
-              <div>
-                <strong class="testimonial-card__name">Juliana Costa</strong>
-                <span class="testimonial-card__role">Cliente • Avaliado em 2026</span>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-
-            <div class="testimonial-card__stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-            </div>
-            <p class="testimonial-card__text">"Consegui um pedreiro pra consertar o telhado antes das chuvas. Foi a salvação! Orçamento rápido e transparente."</p>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__avatar" style="background-color: #06b6d4;">TM</div>
-              <div>
-                <strong class="testimonial-card__name">Thiago Martins</strong>
-                <span class="testimonial-card__role">Cliente • Avaliado em 2025</span>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-
-            <div class="testimonial-card__stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-            </div>
-            <p class="testimonial-card__text">"A facilidade de comparar os orçamentos é genial. Economizei mais de 30% na instalação do ar condicionado."</p>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__avatar" style="background-color: #f97316;">BS</div>
-              <div>
-                <strong class="testimonial-card__name">Beatriz Souza</strong>
-                <span class="testimonial-card__role">Cliente • Avaliado em 2025</span>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-
-            <div class="testimonial-card__stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-            </div>
-            <p class="testimonial-card__text">"Chamei um eletricista para trocar a fiação antiga. Além de pontual, ele explicou tudo o que ia fazer. Profissional demais!"</p>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__avatar" style="background-color: #14b8a6;">RA</div>
-              <div>
-                <strong class="testimonial-card__name">Ricardo Almeida</strong>
-                <span class="testimonial-card__role">Cliente • Avaliado em 2026</span>
-              </div>
-            </div>
-          </div>
-          </div>
         </div>
       </div>
     </section>
@@ -1279,31 +903,37 @@
                   <div class="pricing-card__check-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <span>Cadastro de 1 tipo de serviço</span>
+                  <span>1 profissão cadastrada</span>
                 </li>
                 <li class="pricing-card__feature">
                   <div class="pricing-card__check-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <span>Destaque no Painel de Buscas</span>
+                  <span>Presença nas buscas da sua região</span>
                 </li>
                 <li class="pricing-card__feature">
                   <div class="pricing-card__check-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <span>Profissionais novos</span>
+                  <span>Perfil visível para clientes próximos</span>
                 </li>
                 <li class="pricing-card__feature">
                   <div class="pricing-card__check-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <span>Ideal para ser achado na vizinhança</span>
+                  <span>Contato direto pelo WhatsApp</span>
                 </li>
                 <li class="pricing-card__feature">
                   <div class="pricing-card__check-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <span>Cadastro de WhatsApp direto</span>
+                  <span>Sem intermediários na negociação</span>
+                </li>
+                <li class="pricing-card__feature">
+                  <div class="pricing-card__check-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <span>Cancele quando quiser</span>
                 </li>
               </ul>
 
@@ -1331,13 +961,13 @@
                   <div class="pricing-card__check-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <span>Cadastro de até 2 tipos de serviços</span>
+                  <span>1 profissão cadastrada</span>
                 </li>
                 <li class="pricing-card__feature">
                   <div class="pricing-card__check-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <span>Destaque prioritário nas Buscas</span>
+                  <span>Presença nas buscas da sua região</span>
                 </li>
                 <li class="pricing-card__feature">
                   <div class="pricing-card__check-wrap">
@@ -1349,13 +979,19 @@
                   <div class="pricing-card__check-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <span>Link de redes Sociais</span>
+                  <span>Escritório virtual para orçamentos</span>
                 </li>
                 <li class="pricing-card__feature">
                   <div class="pricing-card__check-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <span>Link de WhatsApp direto no perfil</span>
+                  <span>Contato direto pelo WhatsApp</span>
+                </li>
+                <li class="pricing-card__feature">
+                  <div class="pricing-card__check-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <span>Cancele quando quiser</span>
                 </li>
               </ul>
 
@@ -1384,13 +1020,19 @@
                   <div class="pricing-card__check-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <span>Cadastro de até 3 tipos de serviços</span>
+                  <span>Até 3 profissões cadastradas</span>
                 </li>
                 <li class="pricing-card__feature">
                   <div class="pricing-card__check-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <span>Destaque Premium nas Buscas</span>
+                  <span>Destaque Premium nas buscas</span>
+                </li>
+                <li class="pricing-card__feature">
+                  <div class="pricing-card__check-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <span>Alertas de novos orçamentos</span>
                 </li>
                 <li class="pricing-card__feature">
                   <div class="pricing-card__check-wrap">
@@ -1402,13 +1044,13 @@
                   <div class="pricing-card__check-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <span>Link de Redes sociais no perfil</span>
+                  <span>Escritório virtual completo</span>
                 </li>
                 <li class="pricing-card__feature">
                   <div class="pricing-card__check-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <span>Alertas em tempo real de novos projetos</span>
+                  <span>WhatsApp e redes integradas</span>
                 </li>
               </ul>
 
@@ -1436,31 +1078,37 @@
                   <div class="pricing-card__check-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <span>Perfil exclusivo como "Fornecedor"</span>
+                  <span>Perfil exclusivo para fornecedores</span>
                 </li>
                 <li class="pricing-card__feature">
                   <div class="pricing-card__check-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <span>Vitrine de produtos/catálogo (20 fotos)</span>
+                  <span>Vitrine de produtos e catálogo</span>
                 </li>
                 <li class="pricing-card__feature">
                   <div class="pricing-card__check-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <span>Upload de banner de promoção</span>
+                  <span>Banner promocional no perfil</span>
                 </li>
                 <li class="pricing-card__feature">
                   <div class="pricing-card__check-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <span>Geolocalização para clientes da região</span>
+                  <span>Geolocalização para clientes</span>
                 </li>
                 <li class="pricing-card__feature">
                   <div class="pricing-card__check-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
-                  <span>Leads qualificados de obras em andamento</span>
+                  <span>Leads de obras em andamento</span>
+                </li>
+                <li class="pricing-card__feature">
+                  <div class="pricing-card__check-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <span>Contato direto com interessados</span>
                 </li>
               </ul>
 
@@ -1479,9 +1127,8 @@
       <div class="container">
         <div class="cta-block">
           <div class="cta-block__content">
-            <h2 class="cta-block__title">É profissional e quer novos clientes?</h2>
-            <p class="cta-block__text">Cadastre seus serviços gratuitamente e comece a receber oportunidades na sua
-              região hoje mesmo.</p>
+            <h2 class="cta-block__title">Chega de esperar o cliente bater na sua porta.</h2>
+            <p class="cta-block__text">Cadastre-se na OS – Obras & Serviços e mostre sua competência para quem precisa. Sem burocracia, sem taxa sobre o que você ganha e com negociação direto com o cliente</p>
           </div>
           <a href="#" class="cta-block__btn">Quero ser um profissional OS</a>
         </div>
@@ -1500,16 +1147,24 @@
           <a href="#" class="footer__logo">
             <img src="assets/images/logo_os.png" alt="OS - Obras & Serviços" style="height: 56px;" />
           </a>
-          <p class="footer__tagline">A maior e mais segura plataforma de serviços e obras do Brasil. Conectando quem precisa com quem sabe fazer.</p>
+          <p class="footer__tagline">A plataforma que une quem precisa de um serviço a quem tem a solução, de forma simples, transparente e sem intermediários.</p>
           
           <div class="footer__contact">
             <div class="contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span>(11) 99999-9999</span>
+              <span>67 98120-2442</span>
+            </div>
+            <div class="contact-item" style="align-items: flex-start;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top: 2px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <div style="display: flex; flex-direction: column; gap: 4px;">
+                <span>contato@osobras.com.br</span>
+                <span>contato@osobraseservicos.com.br</span>
+                <span>comercial@osobraseservicos.com.br</span>
+              </div>
             </div>
             <div class="contact-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              <span>contato@osobras.com.br</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              <span>Nosso Instagram</span>
             </div>
           </div>
         </div>
@@ -1545,9 +1200,10 @@
         </div>
       </div>
 
-      <div class="footer__bottom">
-        <div class="footer__copyright">
-          <p>© 2025 OS - Obras & Serviços. Todos os direitos reservados.</p>
+      <div class="footer__bottom" style="margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--color-border); text-align: center;">
+        <div class="footer__copyright" style="font-size: 0.875rem; line-height: 1.6; text-align: center; width: 100%; color: var(--color-text-secondary);">
+          <p style="margin-bottom: 4px;"><strong>&copy; 2026 OS - Obras & Serviços</strong></p>
+          <p>Maracaju / MS - Brasil | Desenvolvimento de websites - <a href="https://topmarketingbh.com.br/" target="_blank" rel="dofollow" style="color: var(--color-accent); font-weight: 600; text-decoration: underline;">Top Marketing BH</a></p>
         </div>
 
       </div>
@@ -1570,25 +1226,21 @@
 
     // How it works tabs
     const stepsTabs = document.querySelectorAll('.steps__tab');
-    const stepsGrids = { client: document.getElementById('steps-client'), pro: document.getElementById('steps-pro') };
-    const stepsTextAnim = document.getElementById('steps-progress-text');
+    const stepsGrids = { 
+      client: document.getElementById('steps-client'), 
+      pro: document.getElementById('steps-pro'),
+      lojista: document.getElementById('steps-lojista')
+    };
 
     stepsTabs.forEach(tab => {
       tab.addEventListener('click', () => {
         stepsTabs.forEach(t => t.classList.remove('steps__tab--active'));
         tab.classList.add('steps__tab--active');
-        Object.values(stepsGrids).forEach(g => g.classList.add('steps__grid--hidden'));
-        stepsGrids[tab.dataset.steps]?.classList.remove('steps__grid--hidden');
-        
-        if (stepsTextAnim) {
-          stepsTextAnim.classList.remove('type-anim-client', 'type-anim-pro');
-          if (tab.dataset.steps === 'client') {
-            stepsTextAnim.textContent = 'Problema resolvido.';
-            if (stepsTextAnim.dataset.isTyping === 'true') stepsTextAnim.classList.add('type-anim-client');
-          } else {
-            stepsTextAnim.textContent = 'Mais clientes.';
-            if (stepsTextAnim.dataset.isTyping === 'true') stepsTextAnim.classList.add('type-anim-pro');
-          }
+        Object.values(stepsGrids).forEach(g => {
+          if(g) g.classList.add('steps__grid--hidden');
+        });
+        if (stepsGrids[tab.dataset.steps]) {
+          stepsGrids[tab.dataset.steps].classList.remove('steps__grid--hidden');
         }
       });
     });
@@ -1694,15 +1346,8 @@
     document.addEventListener('DOMContentLoaded', function() {
       const wrapper = document.querySelector('.steps-wrapper');
       const fill = document.getElementById('steps-progress-fill');
-      const textAnim = document.getElementById('steps-progress-text');
 
-      if (wrapper && fill && textAnim) {
-        // Inicializar texto da aba padrão
-        const activeTab = document.querySelector('.steps__tab--active');
-        if (activeTab && activeTab.dataset.steps === 'client') {
-           textAnim.textContent = 'Problema resolvido.';
-        }
-
+      if (wrapper && fill) {
         window.addEventListener('scroll', function() {
           if (window.innerWidth < 768) return; // Só anima no desktop onde a linha aparece na horizontal
           
@@ -1720,15 +1365,6 @@
             
             progress = Math.max(0, Math.min(progress, 100));
             fill.style.width = progress + '%';
-            
-            if (progress >= 100 && textAnim.dataset.isTyping !== 'true') {
-              textAnim.dataset.isTyping = 'true';
-              const currentTab = document.querySelector('.steps__tab--active').dataset.steps;
-              textAnim.classList.add(currentTab === 'client' ? 'type-anim-client' : 'type-anim-pro');
-            } else if (progress < 100 && textAnim.dataset.isTyping === 'true') {
-              textAnim.dataset.isTyping = 'false';
-              textAnim.classList.remove('type-anim-client', 'type-anim-pro');
-            }
           }
         });
         window.dispatchEvent(new Event('scroll'));
@@ -1831,6 +1467,88 @@
 
       const animatedElements = document.querySelectorAll('.animate-on-scroll');
       animatedElements.forEach(el => observer.observe(el));
+    });
+  </script>
+
+  <!-- Search Toggle Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const proRadio = document.getElementById('search-pro');
+      const lojRadio = document.getElementById('search-loj');
+      const searchList = document.getElementById('search-dropdown-list');
+      
+      const proOptions = [
+        'Pedreiro', 'Eletricista', 'Encanador', 'Pintor', 
+        'Gesseiro', 'Montador de Móveis', 'Marido de Aluguel'
+      ];
+      
+      const lojOptions = [
+        'Material de Construção', 'Tintas', 'Ferramentas', 
+        'Madeireira', 'Elétrica e Iluminação', 'Pisos e Revestimentos', 'Ferragens'
+      ];
+
+      function updateOptions(options) {
+        if (!searchList) return;
+        searchList.innerHTML = '';
+        options.forEach(opt => {
+          const li = document.createElement('li');
+          li.className = 'search-dropdown__item';
+          li.textContent = opt;
+          searchList.appendChild(li);
+        });
+      }
+
+      if (proRadio && lojRadio) {
+        proRadio.addEventListener('change', () => updateOptions(proOptions));
+        lojRadio.addEventListener('change', () => updateOptions(lojOptions));
+      }
+    });
+  </script>
+
+  <!-- Pricing Hover Light & Tilt Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.pricing-card-wrapper');
+      
+      cards.forEach(wrapper => {
+        const card = wrapper.querySelector('.pricing-card');
+        if (!card) return;
+
+        wrapper.addEventListener('mousemove', e => {
+          const rect = wrapper.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+          
+          // Calculate tilt (max 4 degrees)
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          const rotateX = ((y - centerY) / centerY) * -4;
+          const rotateY = ((x - centerX) / centerX) * 4;
+          
+          card.style.setProperty('--rotate-x', `${rotateX}deg`);
+          card.style.setProperty('--rotate-y', `${rotateY}deg`);
+        });
+
+        wrapper.addEventListener('mouseleave', () => {
+          card.style.setProperty('--rotate-x', `0deg`);
+          card.style.setProperty('--rotate-y', `0deg`);
+        });
+      });
+    });
+  </script>
+
+  <!-- Auto Dark Mode Script (18h to 06h) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentHour = new Date().getHours();
+      // If time is 18:00 or later, OR before 06:00, enable dark mode
+      if (currentHour >= 18 || currentHour < 6) {
+        document.body.classList.add('dark-theme');
+      }
     });
   </script>
 

@@ -152,6 +152,64 @@
 
 
 /* ============================================================
+   TOGGLE DE BUSCA (Profissionais / Lojistas)
+   ============================================================ */
+.search-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  background: #F0F0F0;
+  border-radius: 50px;
+  padding: 4px;
+  margin-bottom: 8px;
+}
+
+@media (min-width: 1024px) {
+  .search-toggle {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+    width: max-content;
+  }
+}
+
+.search-toggle input {
+  display: none;
+}
+
+.search-toggle label {
+  text-align: center;
+  padding: 10px 24px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  z-index: 2;
+  position: relative;
+  transition: color 0.3s ease;
+  border-radius: 50px;
+}
+
+.search-toggle input:checked + label {
+  color: #fff;
+}
+
+.search-toggle__bg {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  bottom: 4px;
+  width: calc(50% - 4px);
+  background: var(--color-accent);
+  border-radius: 50px;
+  transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  z-index: 1;
+}
+
+#search-loj:checked ~ .search-toggle__bg {
+  transform: translateX(100%);
+}
+
+/* ============================================================
    CAMPOS DE BUSCA (Inputs)
    ============================================================ */
 .search-field {

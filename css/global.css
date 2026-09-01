@@ -313,14 +313,14 @@ img, svg { display: block; max-width: 100%; }
 }
 
 /* Aba Cliente */
-.icon-descreva { height: 85px; }
-.icon-compare { height: 110px; }
-.icon-contrate { height: 95px; }
+.icon-descreva { height: 100px; }
+.icon-compare { height: 100px; }
+.icon-contrate { height: 100px; }
 
 /* Aba Profissionais */
 .icon-perfil { height: 100px; }
-.icon-phone { height: 135px; }
-.icon-clientela { height: 95px; }
+.icon-phone { height: 100px; }
+.icon-clientela { height: 100px; }
 
 .step-card__title {
   font-size: 1.125rem;

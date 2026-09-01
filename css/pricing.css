@@ -1,59 +1,80 @@
 /* ============================================================
-   PRICING / ASSINATURAS (Neo-Brutalism / Creative)
+   PRICING / ASSINATURAS (Premium Redesign)
    ============================================================ */
+
+/* SEÇÃO PRINCIPAL */
 .pricing-section {
-  padding: 60px 0; /* Reduzido de 100px */
-  background-color: var(--color-bg-main, #ffffff);
+  padding: 80px 0;
+  background: radial-gradient(circle at top, #fafafa 0%, #f1f2f5 100%);
   position: relative;
   overflow: hidden;
-/* Ocultando decorativos que haviam sido adicionados */
-.pricing__bg-decor {
-  display: none;
+}
+
+.dark-theme .pricing-section {
+  background: var(--color-bg-main);
+}
+
+/* LUZ DIFUSA NO FUNDO */
+.pricing-section::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 60%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.9) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .pricing__header {
   position: relative;
   text-align: center;
-  margin-bottom: 40px; 
+  margin-bottom: 60px;
   z-index: 1;
 }
 
 .pricing__eyebrow {
   font-size: 1.125rem;
-  color: #3b82f6; /* Blue 500 */
-  margin-bottom: 8px;
+  color: #3b82f6;
+  margin-bottom: 12px;
   display: inline-block;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
 .pricing__title {
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 300; 
-  color: #181A20;
-  margin-bottom: 12px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
 }
 
 .pricing__subtitle {
-  font-size: 1rem; /* Reduzido de 1.25rem */
-  color: #4b5563; /* text-zinc-600 */
-  max-width: 600px;
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  max-width: 650px;
   margin: 0 auto;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* ============================================================
-   PRICING GRID
+   PRICING GRID Responsividade
    ============================================================ */
 .pricing__grid {
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px; /* Reduzido de 32px */
-  align-items: stretch; 
+  gap: 24px;
+  align-items: stretch;
   z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
 @media (min-width: 768px) {
@@ -65,229 +86,429 @@
 @media (min-width: 1100px) {
   .pricing__grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 16px; /* Reduzido de 24px */
+    gap: 20px;
+    align-items: stretch;
   }
 }
 
 /* ============================================================
-   PRICING CARD (Neo-brutalism)
+   BASE DOS CARDS (EFEITOS E ESTRUTURA)
    ============================================================ */
 .pricing-card-wrapper {
-  position: relative;
-  transition: all 0.3s ease;
+  perspective: 1200px;
+  height: 100%;
 }
-
-/* Rotações nos cards conforme o mockup */
-.pricing__grid .pricing-card-wrapper:nth-child(1) { transform: rotate(-1deg); }
-.pricing__grid .pricing-card-wrapper:nth-child(2) { transform: rotate(1deg); }
-.pricing__grid .pricing-card-wrapper:nth-child(3) { transform: rotate(-2deg); }
-.pricing__grid .pricing-card-wrapper:nth-child(4) { transform: rotate(1deg); }
 
 .pricing-card {
-  background: #ffffff;
-  border: 2px solid #181A20;
-  border-radius: 8px;
-  padding: 16px 12px; 
+  position: relative;
   display: flex;
   flex-direction: column;
-  position: relative;
+  padding: 24px 24px 22px;
+  border-radius: 20px;
   height: 100%;
-  box-shadow: 4px 4px 0px 0px #181A20;
-  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
+  overflow: hidden;
+  background-color: var(--color-bg-card); /* Fundo base para o caso dos gradientes translúcidos */
+}
+
+/* Animações sequenciais no scroll */
+.pricing-card-wrapper:nth-child(1) .animate-on-scroll { transition-delay: 0ms; }
+.pricing-card-wrapper:nth-child(2) .animate-on-scroll { transition-delay: 100ms; }
+.pricing-card-wrapper:nth-child(3) .animate-on-scroll { transition-delay: 200ms; }
+.pricing-card-wrapper:nth-child(4) .animate-on-scroll { transition-delay: 300ms; }
+
+/* 
+  EFEITO DE ILUMINAÇÃO DINÂMICA
+  O JS atualiza --mouse-x e --mouse-y 
+*/
+.pricing-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    800px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    rgba(255, 255, 255, 0.4),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 
+  EFEITO SHIMMER / REFLEXO NO HOVER
+*/
+.pricing-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -150%;
+  width: 50%; height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.35) 45%,
+    rgba(255, 255, 255, 0.12) 55%,
+    transparent 70%
+  );
+  transform: skewX(-20deg);
   z-index: 2;
+  pointer-events: none;
 }
 
-.pricing-card-wrapper:hover .pricing-card {
-  box-shadow: 8px 8px 0px 0px #181A20;
-  transform: translate(-4px, -4px);
+/* Hover Global */
+@media (prefers-reduced-motion: no-preference) {
+  .pricing-card-wrapper:hover .pricing-card {
+    transform: translateY(-10px) scale(1.015) rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg));
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  }
+  
+  .pricing-card-wrapper:hover .pricing-card::before {
+    opacity: 1;
+  }
+  
+  .pricing-card-wrapper:hover .pricing-card::after {
+    animation: shimmer 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  /* Quando o wrapper for hoverado, opcionalmente escurecer irmãos poderia ser feito por :has()
+     mas por compatibilidade manteremos simples */
 }
 
-/* Badge Mais Popular */
+@keyframes shimmer {
+  0% { left: -150%; }
+  100% { left: 200%; }
+}
+
+/* CONTEÚDO DOS CARDS (Acima dos pseudo-elementos) */
+.pricing-card > * {
+  z-index: 3;
+  position: relative;
+}
+
+/* ============================================================
+   DESIGN DOS MATERIAIS ESPECÍFICOS
+   ============================================================ */
+
+/* 1. BRONZE (Cobre/Bronze Escovado) */
+.pricing__grid .pricing-card-wrapper:nth-child(1) .pricing-card {
+  background: linear-gradient(135deg, #3F2418 0%, #75442F 25%, #A86B43 50%, #C8895D 75%, #E1A474 100%);
+  border: 1px solid rgba(225, 164, 116, 0.3);
+  color: #fff;
+}
+.pricing__grid .pricing-card-wrapper:nth-child(1) .pricing-card::after {
+  /* Shimmer levemente acobreado */
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 220, 180, 0.25) 45%, rgba(255, 220, 180, 0.1) 55%, transparent 70%);
+}
+
+/* 2. PRATA (Aço Escovado/Cromado) */
+.pricing__grid .pricing-card-wrapper:nth-child(2) .pricing-card {
+  background: linear-gradient(135deg, #6D737A 0%, #9CA3AA 25%, #F5F6F7 50%, #D7DBDE 75%, #A5ABB1 100%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #1f2937;
+}
+
+/* 3. OURO (Premium Gold, Mais Popular) */
+.pricing__grid .pricing-card-wrapper:nth-child(3) .pricing-card {
+  background: linear-gradient(135deg, #7A5200 0%, #B87900 25%, #F5C342 50%, #FFE58A 75%, #FFF1B3 100%);
+  border: 1px solid rgba(255, 241, 179, 0.8);
+  color: #3f2a00;
+  box-shadow: 0 10px 30px rgba(184, 121, 0, 0.15);
+}
+
+@media (min-width: 1100px) {
+  /* Destaque visual desktop */
+  .pricing__grid .pricing-card-wrapper:nth-child(3) .pricing-card {
+    transform: translateY(-8px);
+    padding-top: 28px;
+    padding-bottom: 26px;
+  }
+  .pricing__grid .pricing-card-wrapper:nth-child(3):hover .pricing-card {
+    transform: translateY(-14px) scale(1.015) rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg));
+    box-shadow: 0 25px 50px rgba(184, 121, 0, 0.25);
+  }
+}
+
+/* Glow atrás do Ouro */
+.pricing__grid .pricing-card-wrapper:nth-child(3)::before {
+  content: "";
+  position: absolute;
+  top: 10%; left: 10%; width: 80%; height: 80%;
+  background: #F5C342;
+  filter: blur(50px);
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* 4. DIAMANTE (Cristal/Vidro) */
+.pricing__grid .pricing-card-wrapper:nth-child(4) .pricing-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(240,250,255,0.4) 50%, rgba(220,240,255,0.2) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 32px rgba(0, 160, 255, 0.05);
+  color: #0f172a;
+}
+.pricing__grid .pricing-card-wrapper:nth-child(4) .pricing-card::after {
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.6) 45%, rgba(255, 255, 255, 0.2) 55%, transparent 70%);
+}
+
+
+/* ============================================================
+   MEDALHÕES / ÍCONES
+   ============================================================ */
+.pricing-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.4), 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Imagens do SVG no icone */
+.pricing-card__icon img {
+  width: 100%; height: 100%; object-fit: cover;
+  transform: scale(1.2); /* Ajuste genérico, dependendo da imagem */
+}
+.icon--prata img { transform: scale(1.6); }
+
+/* Cores específicas dos Medalhões */
+.icon--bronze {
+  background: linear-gradient(135deg, #75442F, #E1A474);
+  border: 2px solid #C8895D;
+}
+.icon--prata {
+  background: linear-gradient(135deg, #9CA3AA, #F5F6F7);
+  border: 2px solid #D7DBDE;
+}
+.icon--ouro {
+  background: linear-gradient(135deg, #F5C342, #FFF1B3);
+  border: 2px solid #FFE58A;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.8), 0 4px 15px rgba(245, 195, 66, 0.4);
+}
+.icon--diamante {
+  background: linear-gradient(135deg, #e0f2fe, #ffffff);
+  border: 2px solid #bae6fd;
+}
+
+.pricing-card-wrapper:hover .pricing-card__icon {
+  transform: translateY(-3px) rotate(3deg);
+}
+
+/* BADGE "MAIS POPULAR" NO OURO */
 .pricing-card__badge {
   position: absolute;
   top: -16px;
   left: 50%;
-  background-color: #fbbf24; /* amber-400 */
-  color: #181A20;
-  font-size: 0.875rem;
-  font-weight: 700;
-  padding: 4px 16px;
-  border-radius: 100px;
-  border: 2px solid #181A20;
-  transform: translateX(-50%) rotate(-4deg);
-  z-index: 10;
-}
-
-/* Header do Card */
-.pricing-card__icon {
-  width: 32px; 
-  height: 32px;
-  border-radius: 100px; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 8px; 
-  border: 2px solid #181A20;
-  background: #fff;
-  overflow: hidden; /* Para garantir que a imagem não vaze */
-}
-.pricing-card__icon svg {
-  width: 16px;
-  height: 16px;
-}
-.pricing-card__icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Ajustes finos para as imagens preencherem a moldura perfeitamente */
-.icon--prata img {
-  transform: scale(1.7);
-}
-.icon--ouro img {
-  transform: scale(1.1);
-}
-.icon--diamante img {
-  transform: scale(1.1);
-}
-.icon--bronze img {
-  transform: scale(1.1);
-}
-
-.pricing-card__name {
-  font-size: 1.25rem; /* Reduzido de 1.5 */
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #FFF1B3, #F5C342);
+  color: #3f2a00;
+  font-size: 0.75rem;
   font-weight: 800;
-  color: #181A20;
-  margin-bottom: 2px; /* Reduzido */
+  padding: 6px 16px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 12px rgba(184, 121, 0, 0.3);
+  z-index: 10;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   TIPOGRAFIA & LAYOUT DOS DADOS
+   ============================================================ */
+.pricing-card__name {
+  font-size: 1.375rem;
+  font-weight: 800;
+  margin-bottom: 4px;
 }
 
 .pricing-card__desc {
-  font-size: 0.75rem; /* Reduzido de 0.875rem */
-  color: #4b5563; /* zinc-600 */
-  margin-bottom: 12px; /* Reduzido */
-  min-height: 32px; /* Ajustado */
-  line-height: 1.3;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 14px;
+  opacity: 0.85;
 }
 
 /* Preço */
 .pricing-card__price-wrap {
   display: flex;
-  align-items: baseline;
-  gap: 2px;
-  margin-bottom: 16px; /* Reduzido */
+  align-items: flex-start; /* Alinhamento ao topo para que o R$ fique alto */
+  gap: 4px;
+  margin-bottom: 20px;
 }
 
 .pricing-card__currency {
-  font-size: 0.875rem; /* Reduzido */
-  color: #181A20;
+  font-size: 0.875rem;
   font-weight: 700;
+  margin-top: 6px; /* Desce um pouco pra alinhar melhor com os números altos */
 }
 
 .pricing-card__price {
-  font-size: 2rem; /* Reduzido de 2.75 */
+  font-size: 2.5rem; /* ~40px para ficar forte mas compacto */
   font-weight: 800;
-  color: #181A20;
   line-height: 1;
+  letter-spacing: -0.03em;
 }
 
 .pricing-card__period {
-  font-size: 0.875rem; /* Reduzido */
-  color: #4b5563;
+  font-size: 0.8125rem;
+  align-self: flex-end;
+  margin-bottom: 6px;
+  opacity: 0.75;
+  font-weight: 500;
 }
 
-/* Lista de Features */
+/* ============================================================
+   LISTA DE BENEFÍCIOS
+   ============================================================ */
 .pricing-card__features {
   list-style: none;
   padding: 0;
-  margin: 0 0 16px 0; /* Reduzido */
+  margin: 0 0 20px 0;
   display: flex;
   flex-direction: column;
-  gap: 6px; /* Ultra compacto */
+  gap: 10px;
   flex: 1;
 }
 
 .pricing-card__feature {
   display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  color: #181A20;
-  font-size: 0.8125rem; /* 13px */
-  font-weight: 500;
-  line-height: 1.3;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem; /* ~14px */
+  font-weight: 600;
+  line-height: 1.25;
 }
 
+/* Checks Customizados por Material */
 .pricing-card__check-wrap {
-  width: 16px; 
-  height: 16px;
-  border-radius: 100px;
-  border: 1.5px solid #181A20;
+  width: 18px; 
+  height: 18px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  background: #fff;
-  margin-top: 1px;
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.3);
 }
-
 .pricing-card__check-wrap svg {
-  width: 10px; 
-  height: 10px;
-  stroke: #181A20;
+  width: 9px; 
+  height: 9px;
+  stroke: #fff;
   stroke-width: 3;
 }
 
-/* Botões de Ação */
+/* Cores específicas para os checks de cada card para harmonizar */
+.pricing__grid .pricing-card-wrapper:nth-child(1) .pricing-card__check-wrap { background: #A86B43; } /* Bronze */
+.pricing__grid .pricing-card-wrapper:nth-child(2) .pricing-card__check-wrap { background: #6D737A; } /* Prata */
+.pricing__grid .pricing-card-wrapper:nth-child(3) .pricing-card__check-wrap { background: #B87900; } /* Ouro */
+.pricing__grid .pricing-card-wrapper:nth-child(4) .pricing-card__check-wrap { background: #0284c7; } /* Diamante (Azul) */
+
+/* Tratamento de contraste SVG dependendo do material se necessário */
+.pricing__grid .pricing-card-wrapper:nth-child(4) .pricing-card__check-wrap svg { stroke: #fff; }
+
+/* ============================================================
+   BOTÕES CTAS PREMIUM
+   ============================================================ */
 .pricing-card__btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 36px; 
-  font-size: 0.875rem; 
+  height: 48px; 
+  font-size: 0.95rem; 
   font-weight: 700;
   text-decoration: none;
-  border-radius: 0;
-  border: 2px solid #181A20;
+  border-radius: 12px;
+  border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 3px 3px 0px 0px #181A20;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-top: auto;
+}
+
+/* Efeito de brilho no botão */
+.pricing-card__btn::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%; width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s;
+  z-index: -1;
+}
+
+.pricing-card__btn:hover::after {
+  left: 200%;
 }
 
 .pricing-card__btn:hover {
-  box-shadow: 5px 5px 0px 0px #181A20;
-  transform: translate(-2px, -2px);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
 .pricing-card__btn:active {
-  box-shadow: 1px 1px 0px 0px #181A20;
-  transform: translate(1px, 1px);
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Cores dos botões conforme popularidade */
-.btn--normal {
-  background-color: #f9fafb; /* zinc-50 */
-  color: #181A20;
+/* ESTILOS ESPECÍFICOS DE BOTÕES POR PLANO */
+/* Bronze */
+.pricing__grid .pricing-card-wrapper:nth-child(1) .pricing-card__btn {
+  background: linear-gradient(135deg, #75442F, #3F2418);
+  color: #fff;
+  border: 1px solid rgba(225, 164, 116, 0.2);
 }
-.btn--normal:hover {
-  background-color: #ffffff;
+/* Prata */
+.pricing__grid .pricing-card-wrapper:nth-child(2) .pricing-card__btn {
+  background: linear-gradient(135deg, #4b5563, #1f2937);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* Ouro */
+.pricing__grid .pricing-card-wrapper:nth-child(3) .pricing-card__btn {
+  background: linear-gradient(135deg, #FFF1B3, #F5C342);
+  color: #3f2a00;
+  border: 1px solid #FFE58A;
+  box-shadow: 0 4px 12px rgba(245, 195, 66, 0.3);
+}
+.pricing__grid .pricing-card-wrapper:nth-child(3) .pricing-card__btn:hover {
+  box-shadow: 0 8px 20px rgba(245, 195, 66, 0.4);
+}
+/* Diamante */
+.pricing__grid .pricing-card-wrapper:nth-child(4) .pricing-card__btn {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.btn--popular {
-  background-color: #fbbf24; /* amber-400 */
-  color: #181A20;
+/* ============================================================
+   PREFERS REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .pricing-card-wrapper:hover .pricing-card {
+    transform: none;
+  }
+  .pricing-card::after {
+    display: none;
+  }
+  .pricing-card::before {
+    display: none;
+  }
+  .pricing__grid .pricing-card-wrapper:nth-child(3) .pricing-card {
+    transform: none !important;
+  }
 }
-.btn--popular:hover {
-  background-color: #fcd34d; /* amber-300 */
-}
-
-/* Cores específicas dos ícones do Header para dar o toque final */
-.icon--bronze { background-color: #fef3c7; } /* Fundo claro para realçar o ícone */
-.icon--prata { background-color: #f3f4f6; }
-.icon--ouro { background-color: #fef3c7; }
-.icon--diamante { background-color: #ecfdf5; }
-
-.icon--bronze svg { fill: none; stroke: #b45309; } /* amber-700 / marrom */
-.icon--prata svg { fill: none; stroke: #4b5563; } /* zinc-600 */
-.icon--ouro svg { fill: #f59e0b; stroke: #d97706; } /* amber-500 / amber-600 */
-.icon--diamante svg { fill: none; stroke: #059669; } /* emerald-600 */

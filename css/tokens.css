@@ -109,3 +109,20 @@
   --color-gold-dark:  #B88A0D;
   --color-gold-glow:  #F2C94C;
 }
+
+/* ============================================================
+   DARK THEME OVERRIDES (Ativado via JS após 18h)
+   ============================================================ */
+.dark-theme {
+  --color-bg-main:       #121212;
+  --color-bg-secondary:  #1A1A1A;
+  --color-bg-card:       #1E1E1E;
+  --color-bg-elevated:   #252525;
+
+  --color-text-primary:   #FFFFFF;
+  --color-text-secondary: #E0E0E0;
+  --color-text-muted:     #999999;
+
+  --color-border:       #333333;
+  --color-border-focus: #D4A017;
+}
