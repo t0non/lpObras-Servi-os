@@ -10,9 +10,7 @@
   overflow: hidden;
 }
 
-.dark-theme .pricing-section {
-  background: var(--color-bg-main);
-}
+
 
 /* LUZ DIFUSA NO FUNDO */
 .pricing-section::before {
