@@ -7,14 +7,6 @@
   padding-block: 80px;
 }
 
-/* Mobile: zoom out o background para mostrar mais da cena */
-@media (max-width: 767px) {
-  .about-cards-section {
-    background-size: 260% auto !important;
-    background-position: 15% center !important;
-  }
-}
-
 .about-cards__grid {
   display: grid;
   grid-template-columns: 1fr;
