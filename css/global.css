@@ -12,6 +12,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 110px;
   font-size: 16px;
   width: 100%;
   max-width: 100%;
@@ -628,22 +629,57 @@ img, svg { display: block; max-width: 100%; }
 
 .footer__contact {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
   margin-top: var(--space-6);
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   color: rgba(255,255,255,0.7);
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
+}
+
+.contact-item + .contact-item::before {
+  content: '/';
+  color: rgba(255,255,255,0.25);
+  font-size: 0.8em;
+  margin-right: 6px;
 }
 
 .contact-item svg {
   color: var(--color-primary);
   opacity: 0.9;
+  flex-shrink: 0;
+}
+
+.footer__social-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 4px;
+}
+
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.75);
+  transition: all 0.2s ease;
+}
+
+.footer__social-link:hover {
+  background: var(--color-primary);
+  color: #111;
+  transform: translateY(-2px);
 }
 
 .footer__bottom {

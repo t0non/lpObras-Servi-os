@@ -50,10 +50,18 @@
         "@type": "Organization",
         "@id": "https://www.osobras.com.br/#organization",
         "name": "OS - Obras & Serviços",
+        "legalName": "KAETAGO - SOLUÇÕES TECNOLÓGICAS",
+        "taxID": "67.901.035/0001-72",
         "url": "https://www.osobras.com.br/",
         "logo": {
           "@type": "ImageObject",
           "url": "https://www.osobras.com.br/assets/images/logo_os.png"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Maracaju",
+          "addressRegion": "MS",
+          "addressCountry": "BR"
         }
       }
     ]
@@ -105,15 +113,27 @@
       <nav class="header__nav" aria-label="Menu principal">
         <a href="#" class="header__nav-link">Início</a>
         <a href="#como-funciona" class="header__nav-link">Como funciona?</a>
-        <a href="#categorias" class="header__nav-link">Profissionais</a>
-        <a href="#sobre" class="header__nav-link">Sobre a OS</a>
+        <a href="#categorias" class="header__nav-link">Serviços</a>
+        <a href="#planos" class="header__nav-link">Planos</a>
+        <a href="#sobre" class="header__nav-link">Quem somos</a>
       </nav>
 
       <!-- Ações -->
       <div class="header__actions">
         <a href="#" class="header__btn-pro">Seja um profissional</a>
-        <a href="#" class="header__btn-login">Entrar</a>
+        <a href="#" class="header__btn-login header__btn-login--pulse" id="btn-entrar">Entrar</a>
       </div>
+
+      <style>
+        @keyframes btn-pulse {
+          0%   { box-shadow: 0 0 0 0 rgba(255, 184, 0, 0.55); }
+          70%  { box-shadow: 0 0 0 10px rgba(255, 184, 0, 0); }
+          100% { box-shadow: 0 0 0 0 rgba(255, 184, 0, 0); }
+        }
+        .header__btn-login--pulse {
+          animation: btn-pulse 2s ease-out infinite;
+        }
+      </style>
 
     </div>
 
@@ -178,7 +198,7 @@
     <!-- ==========================================
          O QUE É O OS? (HOW IT WORKS)
          ========================================== -->
-    <section class="how-it-works" id="como-funciona">
+    <section class="how-it-works" id="oque-e-os">
       <div class="how-it-works__header">
         <h2 class="how-it-works__title">O que é a OS - Obras & Serviços?</h2>
         <p class="how-it-works__subtitle">
@@ -544,8 +564,9 @@
     <!-- ==========================================
          SOBRE OS / QUEM SOMOS
          ========================================== -->
-    <section class="section about-cards-section" id="sobre">
-      <div class="container">
+    <section class="section about-cards-section" id="sobre" style="background-image: url('assets/images/background_sobre.jpg'); background-size: cover; background-position: center; background-attachment: fixed; position: relative;">
+      <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.65); z-index: 0;"></div>
+      <div class="container" style="position: relative; z-index: 1;">
         <div class="section__header text-center animate-on-scroll fade-up">
           <h2 class="section__title">Sobre a OS</h2>
         </div>
@@ -576,7 +597,7 @@
     <!-- ==========================================
          SOBRE OS / BANNER CTA (Substituindo 'Por que usar a OS?')
          ========================================== -->
-    <section class="section about-os-section" id="sobre">
+    <section class="section about-os-section" id="sobre-cta">
       <div class="container about-os__container">
         
         <!-- Lado Esquerdo: Imagem -->
@@ -1175,43 +1196,25 @@
             <img src="assets/images/logo_os.png" alt="OS - Obras & Serviços" style="height: 56px;" />
           </a>
           <p class="footer__tagline">A plataforma que une quem precisa de um serviço a quem tem a solução, de forma simples, transparente e sem intermediários.</p>
-          
-          <div class="footer__contact">
-            <div class="contact-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span>67 98120-2442</span>
-            </div>
-            <div class="contact-item" style="align-items: flex-start;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top: 2px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              <div style="display: flex; flex-direction: column; gap: 4px;">
-                <span>contato@osobras.com.br</span>
-                <span>contato@osobraseservicos.com.br</span>
-                <span>comercial@osobraseservicos.com.br</span>
-              </div>
-            </div>
-            <div class="contact-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-              <span>Nosso Instagram</span>
-            </div>
-          </div>
+
         </div>
 
         <div class="footer__col">
           <h4 class="footer__col-title">Para Clientes</h4>
           <ul class="footer__links">
-            <li><a href="#">Encontrar profissionais</a></li>
-            <li><a href="#">Categorias de serviços</a></li>
-            <li><a href="#">Como funciona</a></li>
-            <li><a href="#">Avaliações</a></li>
+            <li><a href="#hero">Encontrar profissionais</a></li>
+            <li><a href="#busca">Encontrar lojistas</a></li>
+            <li><a href="#como-funciona">Como funciona</a></li>
+            <li><a href="#depoimentos">Avaliações</a></li>
           </ul>
         </div>
 
         <div class="footer__col">
           <h4 class="footer__col-title">Para Profissionais</h4>
           <ul class="footer__links">
-            <li><a href="#">Cadastrar meus serviços</a></li>
-            <li><a href="#">Como funciona para pros</a></li>
-            <li><a href="#">Planos e preços</a></li>
+            <li><a href="#planos">Cadastrar meus serviços</a></li>
+            <li><a href="#como-funciona">Como funciona para pros</a></li>
+            <li><a href="#planos">Planos e preços</a></li>
             <li><a href="#">Central do profissional</a></li>
           </ul>
         </div>
@@ -1219,7 +1222,7 @@
         <div class="footer__col">
           <h4 class="footer__col-title">A OS</h4>
           <ul class="footer__links">
-            <li><a href="#">Quem somos</a></li>
+            <li><a href="#sobre">Quem somos</a></li>
             <li><a href="#">Contato</a></li>
             <li><a href="#">Termos de uso</a></li>
             <li><a href="#">Privacidade</a></li>
@@ -1227,12 +1230,45 @@
         </div>
       </div>
 
+      <div class="footer__contact-bar" style="width: 100%; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 16px; margin-top: 32px; padding: 24px 0 0 0; border-top: 1px solid rgba(255,255,255,0.1);">
+        <div class="contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span>67 98120-2442</span>
+        </div>
+        <div class="contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>contato@osobras.com.br</span>
+        </div>
+        <div class="contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>contato@osobraseservicos.com.br</span>
+        </div>
+        <div class="contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>comercial@osobraseservicos.com.br</span>
+        </div>
+        <div class="footer__social-links" style="display: flex; gap: 8px;">
+          <a href="https://www.instagram.com/os_obras_servicos?stkn=cWhkdm9qaDZlaXBj" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="https://www.facebook.com/share/1Jaib4WptP/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+        </div>
+      </div>
+
       <div class="footer__bottom" style="margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--color-border); text-align: center;">
         <div class="footer__copyright" style="font-size: 0.875rem; line-height: 1.6; text-align: center; width: 100%; color: var(--color-text-secondary);">
           <p style="margin-bottom: 4px;"><strong>&copy; 2026 OS - Obras & Serviços</strong></p>
-          <p>Maracaju / MS - Brasil | Desenvolvimento de websites - <a href="https://topmarketingbh.com.br/" target="_blank" rel="dofollow" style="color: var(--color-accent); font-weight: 600; text-decoration: underline;">Top Marketing BH</a></p>
+          <p style="margin-bottom: 12px;">Maracaju / MS - Brasil | Desenvolvimento de websites - <a href="https://topmarketingbh.com.br/" target="_blank" rel="dofollow" style="color: var(--color-accent); font-weight: 600; text-decoration: underline;">Top Marketing BH</a></p>
+          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 14px; font-size: 0.75rem; color: rgba(255,255,255,0.45); letter-spacing: 0.02em;">
+            <span style="color:rgba(255,255,255,.7);font-weight:600;">KAETAGO &ndash; Soluções Tecnológicas</span>
+            <span style="color:rgba(255,255,255,.2);">&middot;</span>
+            <span>CNPJ: 67.901.035/0001-72</span>
+            <span style="color:rgba(255,255,255,.2);">&middot;</span>
+            <span>Maracaju &ndash; MS</span>
+          </div>
         </div>
-
       </div>
     </div>
   </footer>
@@ -1567,6 +1603,8 @@
       });
     });
   </script>
+
+
 
 
 
