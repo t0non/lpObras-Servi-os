@@ -3,7 +3,7 @@
    ============================================================ */
 
 .about-cards-section {
-  background-color: var(--color-bg-secondary);
+  background-color: transparent;
   padding-block: 80px;
 }
 
@@ -22,12 +22,14 @@
 }
 
 .about-card {
-  background: var(--color-bg-card);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   padding: 40px 32px;
   border-radius: 24px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--color-border);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -35,14 +37,15 @@
 
 .about-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
   border-color: var(--color-accent);
 }
 
 .about-card__title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--color-text-primary);
+  color: #ffffff;
   margin-bottom: 20px;
   position: relative;
   padding-bottom: 16px;
@@ -62,7 +65,7 @@
 .about-card__text {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.85);
   flex-grow: 1;
 }
 
