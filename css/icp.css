@@ -163,6 +163,19 @@
     text-align: center;
   }
   
+  .reforma__image-wrapper {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .reforma__image {
+    margin: 0 auto;
+    margin-top: -80px;
+    display: block;
+    max-width: 80%;
+  }
+
+  
   .reforma__badge {
     right: 0;
     bottom: 10px;

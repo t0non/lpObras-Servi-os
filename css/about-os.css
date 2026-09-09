@@ -251,3 +251,15 @@
   border-color: var(--color-text-heading, #1a1a2e);
   background-color: rgba(0,0,0,0.03);
 }
+
+@media (max-width: 991px) {
+  .about-os__image-wrapper {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .about-os__image {
+    margin: 0 auto;
+    display: block;
+  }
+}
