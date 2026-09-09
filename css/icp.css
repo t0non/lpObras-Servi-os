@@ -156,6 +156,7 @@
 @media (max-width: 991px) {
   .reforma-section {
     padding-top: 80px; /* Mais espaço pra cabeça no mobile */
+    padding-bottom: 60px; /* Respiro abaixo do botão */
   }
   
   .reforma__content {
